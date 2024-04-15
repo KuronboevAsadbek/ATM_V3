@@ -15,10 +15,6 @@ spring:
     redis:
       host: localhost
       port: 6379
-jwt:
-  token:
-    secret: ZG9uaWtJbnRlcm5Qcm9qZWN0IDI2LjAyLjIwMjQ=
-    validity: 86400000
 
 
 server:
@@ -26,23 +22,5 @@ server:
   error:
     include-message: always
 
-  servlet:
-    multipart:
-      max-file-size: 1000MB
-      max-request-size: 1000MB
-    context-path: /api
 
-upload:
-  folder: root/ProjectFiles
-
-
-
-springdoc:
-  swagger-ui:
-    enabled: true
-    tags-sorter: alpha
-    display-request-duration: true
-    operations-sorter: method
-    path: /docs
-    default-models-expand-depth: -1
 
