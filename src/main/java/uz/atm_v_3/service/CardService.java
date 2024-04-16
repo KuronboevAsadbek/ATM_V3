@@ -2,7 +2,9 @@ package uz.atm_v_3.service;
 
 import jakarta.servlet.http.HttpServletRequest;
 import uz.atm_v_3.dto.request.CardRequestDTO;
+import uz.atm_v_3.dto.request.CashingRequestDTO;
 import uz.atm_v_3.dto.response.CardResponseDTO;
+import uz.atm_v_3.dto.response.CashingResponseDTO;
 import uz.atm_v_3.dto.response.ResponseDTO;
 
 import java.util.List;
@@ -17,4 +19,7 @@ public interface CardService {
                                                                          HttpServletRequest request);
     ResponseDTO updateCard(Long id, CardRequestDTO cardRequestDTO, HttpServletRequest request);
 
+    ResponseDTO fillCardBalance(String cardNumber, String amount, HttpServletRequest request);
+
+    CashingResponseDTO cashing(CashingRequestDTO cashingRequestDTO, HttpServletRequest request);
 }

@@ -25,6 +25,7 @@ public class CardHolderRequestDTO {
     private String phoneNumber;
 
     @JsonProperty("email")
+    @Email(message = "Email must be filled with @ and . symbols")
     private String email;
 
     @JsonProperty("address")
@@ -36,6 +37,7 @@ public class CardHolderRequestDTO {
     private String passportSeries;
 
     @JsonProperty("passport_number")
+    @Size(min = 7, max = 7, message = "Passport number must be 9 characters")
     @NotEmpty(message = "Passport number must be filled")
     private String passportNumber;
 

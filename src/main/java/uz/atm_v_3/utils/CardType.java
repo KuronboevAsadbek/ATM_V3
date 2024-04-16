@@ -8,13 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public enum CardType {
 
-    UZCARD("UzCard"),
-    HUMO("Humo"),
-    VISA("Visa"),
-    MASTER_CARD("MasterCard");
-    private String value;
+    UZCARD,
+    HUMO,
+    VISA
 
-    CardType(String value) {
-        this.value = value;
-    }
 }

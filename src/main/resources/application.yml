@@ -11,10 +11,7 @@ spring:
     #        generate_statistics: true
     hibernate:
       ddl-auto: update
-  data:
-    redis:
-      host: localhost
-      port: 6379
+
 
 
 server:
@@ -22,5 +19,6 @@ server:
   error:
     include-message: always
 
-
+  servlet:
+    context-path: /api
 

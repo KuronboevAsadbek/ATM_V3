@@ -26,6 +26,7 @@ public class Card implements Serializable {
     private String cardNumber;
 
     @Column(name = "card_type")
+    @Enumerated(EnumType.STRING)
     private CardType cardType;
 
     @Column(name = "card_expire_date")
@@ -44,6 +45,7 @@ public class Card implements Serializable {
     private Boolean isActive;
 
     @ManyToOne
+    @JoinColumn(name = "card_holder_id")
     private CardHolder cardHolder;
 
 

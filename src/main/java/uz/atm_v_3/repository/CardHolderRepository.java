@@ -6,4 +6,7 @@ import uz.atm_v_3.model.CardHolder;
 
 @Repository
 public interface CardHolderRepository extends JpaRepository<CardHolder, Long> {
+
+
+
 }

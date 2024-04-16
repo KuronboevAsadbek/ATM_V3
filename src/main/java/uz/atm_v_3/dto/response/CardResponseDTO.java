@@ -1,6 +1,7 @@
 package uz.atm_v_3.dto.response;
 
 
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,8 @@ public class CardResponseDTO {
     private String cardHolderName;
     private String cardExpireDate;
     private String cardStatus;
+    private String cardCVC;
+    private String cardPin;
     private String cardBalance;
     private String cardHolderPhoneNumber;
     private String cardHolderAddress;
