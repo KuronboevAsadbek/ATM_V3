@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CashingRequestDTO {
+public class FillOutRequestDTO {
 
     @JsonProperty("card_number")
     private String cardNumber;
@@ -20,4 +20,5 @@ public class CashingRequestDTO {
     private String amount;
     @JsonProperty("cashing_banknote_type")
     private String cashingBanknoteType;
+
 }

@@ -7,10 +7,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CashingResponseDTO {
+public class FillOutResponseDTO {
 
     private String message;
-    private String commission;
     private String balance;
-    private String cashedAmount;
+    private String commission;
+    private String filledAmount;
 }

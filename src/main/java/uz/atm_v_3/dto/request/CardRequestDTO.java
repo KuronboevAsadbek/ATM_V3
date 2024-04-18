@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
 import uz.atm_v_3.model.CardHolder;
+import uz.atm_v_3.model.CardType;
 
 @Getter
 @Setter
@@ -30,5 +31,9 @@ public class CardRequestDTO {
     @NotNull
     @JsonProperty("card_holder")
     private CardHolder cardHolder;
+
+    @JsonProperty("card_type")
+    private CardType cardTypeId;
+
 
 }

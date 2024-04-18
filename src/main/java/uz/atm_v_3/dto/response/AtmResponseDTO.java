@@ -7,10 +7,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CashingResponseDTO {
+public class AtmResponseDTO {
 
     private String message;
-    private String commission;
-    private String balance;
-    private String cashedAmount;
+    private String banknoteType;
+    private Integer banknoteCount;
 }

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import uz.atm_v_3.utils.CardType;
 
 import java.io.Serializable;
 
@@ -25,10 +24,6 @@ public class Card implements Serializable {
     @Column(name = "card_number", unique = true)
     private String cardNumber;
 
-    @Column(name = "card_type")
-    @Enumerated(EnumType.STRING)
-    private CardType cardType;
-
     @Column(name = "card_expire_date")
     private String cardExpireDate;
 
@@ -47,6 +42,10 @@ public class Card implements Serializable {
     @ManyToOne
     @JoinColumn(name = "card_holder_id")
     private CardHolder cardHolder;
+
+    @ManyToOne
+    @JoinColumn(name = "card_type_id")
+    private CardType cardType;
 
 
 }

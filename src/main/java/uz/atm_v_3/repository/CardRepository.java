@@ -17,4 +17,5 @@ public interface CardRepository extends JpaRepository<Card, Long> {
     List<Card> findAllByCardHolderPINFL(String pinfl);
 
     Card findCardByCardNumber(String cardNumber);
+
 }

@@ -1,17 +1,20 @@
 package uz.atm_v_3.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import uz.atm_v_3.utils.Banknotes;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BankNoteRequestDTO {
+public class AtmRequestDTO {
 
+    @JsonProperty("banknote_type")
     private String banknoteType;
-    private Banknotes banknotes;
+
+    @JsonProperty("banknote_count")
+    private Integer banknoteCount;
 }

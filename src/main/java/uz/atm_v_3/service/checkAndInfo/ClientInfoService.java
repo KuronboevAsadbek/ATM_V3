@@ -1,4 +1,4 @@
-package uz.atm_v_3.service.impl;
+package uz.atm_v_3.service.checkAndInfo;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

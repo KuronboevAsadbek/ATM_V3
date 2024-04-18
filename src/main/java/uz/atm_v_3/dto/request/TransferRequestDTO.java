@@ -10,14 +10,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CashingRequestDTO {
+public class TransferRequestDTO {
 
-    @JsonProperty("card_number")
-    private String cardNumber;
-    @JsonProperty("card_pin")
-    private String cardPin;
+    @JsonProperty("from_card_number")
+    private String fromCardNumber;
+
+    @JsonProperty("to_card_number")
+    private String toCardNumber;
+
     @JsonProperty("amount")
     private String amount;
-    @JsonProperty("cashing_banknote_type")
-    private String cashingBanknoteType;
+
+    @JsonProperty("pin")
+    private String pin;
 }

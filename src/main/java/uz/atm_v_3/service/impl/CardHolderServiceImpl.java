@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import uz.atm_v_3.config.network.NetworkDataService;
 import uz.atm_v_3.dto.request.CardHolderRequestDTO;
 import uz.atm_v_3.dto.response.CardHolderResponseDTO;
 import uz.atm_v_3.dto.response.ResponseDTO;
@@ -15,6 +14,7 @@ import uz.atm_v_3.mapping.CardHolderMapper;
 import uz.atm_v_3.model.CardHolder;
 import uz.atm_v_3.repository.CardHolderRepository;
 import uz.atm_v_3.service.CardHolderService;
+import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
 import java.util.List;
 
