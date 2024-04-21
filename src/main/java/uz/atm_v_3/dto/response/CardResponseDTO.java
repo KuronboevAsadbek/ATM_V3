@@ -3,6 +3,7 @@ package uz.atm_v_3.dto.response;
 
 import jakarta.persistence.Id;
 import lombok.*;
+import uz.atm_v_3.model.CardType;
 
 @Getter
 @Setter
@@ -18,7 +19,7 @@ public class CardResponseDTO {
     private String cardExpireDate;
     private String cardCVC;
     private String cardPin;
-    private String cardType;
+    private String cardTypeName;
     private Boolean cardStatus;
     private String cardHolderName;
     private String cardHolderAddress;

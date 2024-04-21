@@ -19,16 +19,22 @@ public class CardController {
 
     private final CardService cardService;
 
-    @PostMapping(CREATE)
-    public ResponseEntity<CardResponseDTO> createCard(@RequestBody @Valid CardRequestDTO cardRequestDTO,
-                                                      HttpServletRequest httpServletRequest) {
-        return ResponseEntity.ok(cardService.createCard(cardRequestDTO, httpServletRequest));
-    }
+//    @PostMapping(CREATE)
+//    public ResponseEntity<CardResponseDTO> createCard(@RequestBody @Valid CardRequestDTO cardRequestDTO,
+//                                                      HttpServletRequest httpServletRequest) {
+//        return ResponseEntity.ok(cardService.createCard(cardRequestDTO, httpServletRequest));
+//    }
 
     @PutMapping(UPDATE)
     public ResponseEntity<ResponseDTO> updateCard(@PathVariable Long id,
                                                   @RequestBody @Valid CardRequestDTO cardRequestDTO,
                                                   HttpServletRequest httpServletRequest) {
         return ResponseEntity.ok(cardService.updateCard(id, cardRequestDTO, httpServletRequest));
+    }
+
+    @PostMapping(CREATE)
+    public ResponseEntity<CardResponseDTO> createCard(@RequestBody @Valid CardRequestDTO cardRequestDTO,
+                                                      HttpServletRequest httpServletRequest) {
+        return ResponseEntity.ok(cardService.creatNewCard(cardRequestDTO, httpServletRequest));
     }
 }

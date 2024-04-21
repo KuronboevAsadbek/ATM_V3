@@ -17,4 +17,7 @@ public class AtmRequestDTO {
 
     @JsonProperty("banknote_count")
     private Integer banknoteCount;
+
+    @JsonProperty("currency_type_id")
+    private Long currencyTypeId;
 }

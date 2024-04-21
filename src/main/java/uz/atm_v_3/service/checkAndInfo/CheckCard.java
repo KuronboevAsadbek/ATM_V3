@@ -1,21 +1,30 @@
 package uz.atm_v_3.service.checkAndInfo;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import uz.atm_v_3.dto.request.CashingRequestDTO;
 import uz.atm_v_3.dto.request.FillOutRequestDTO;
 import uz.atm_v_3.dto.request.TransferRequestDTO;
 import uz.atm_v_3.exception.CardException;
+import uz.atm_v_3.exception.CardTypeException;
+import uz.atm_v_3.exception.CheckPinException;
 import uz.atm_v_3.model.Card;
+import uz.atm_v_3.repository.CardRepository;
+import uz.atm_v_3.repository.CurrencyTypeRepository;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Component
+@RequiredArgsConstructor
 public class CheckCard {
+
+    private final CurrencyTypeRepository currencyTypeRepository;
+    private final CardRepository cardRepository;
 
     public void checkCardForCashing(CashingRequestDTO cashingRequestDTO, Card card) {
 
-        double amountDouble = Double.parseDouble(cashingRequestDTO.getAmount());
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate expireDate = LocalDate.parse(card.getCardExpireDate(), formatter);
 
@@ -28,30 +37,14 @@ public class CheckCard {
         if (!card.getCardPin().equals(cashingRequestDTO.getCardPin())) {
             throw new CardException("Card pin is incorrect");
         }
-        if (!card.getCardType().getName().equals("VISA")) {
-            if (amountDouble < 11000) {
-                throw new CardException("Amount must be greater than 11000");
-            }
-            if (amountDouble % 1000 != 0) {
-                throw new CardException("Amount must be multiple of 1000");
-            }
-        } else {
-            if (amountDouble < 10) {
-                throw new CardException("Amount must be greater than 10");
-            }
-            if (amountDouble % 5 != 0) {
-                throw new CardException("Amount must be multiple of 5");
-            }
-        }
 
     }
 
-    private double amountDouble(FillOutRequestDTO fillOutRequestDTO) {
-        return Double.parseDouble(fillOutRequestDTO.getAmount());
-    }
+
 
     public void checkingForFillOut(FillOutRequestDTO fillOutRequestDTO, Card card) {
-        double amountDouble = Double.parseDouble(fillOutRequestDTO.getAmount());
+
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate expireDate = LocalDate.parse(card.getCardExpireDate(), formatter);
 
@@ -64,21 +57,7 @@ public class CheckCard {
         if (!card.getCardPin().equals(fillOutRequestDTO.getCardPin())) {
             throw new CardException("Card pin is incorrect");
         }
-        if (!card.getCardType().getName().equals("VISA")) {
-            if (amountDouble < 11000) {
-                throw new CardException("Amount must be greater than 11000");
-            }
-            if (amountDouble % 1000 != 0) {
-                throw new CardException("Amount must be multiple of 1000");
-            }
-        } else {
-            if (amountDouble < 10) {
-                throw new CardException("Amount must be greater than 10");
-            }
-            if (amountDouble % 5 != 0) {
-                throw new CardException("Amount must be multiple of 5");
-            }
-        }
+
 
     }
 
@@ -88,13 +67,13 @@ public class CheckCard {
         LocalDate expireDateFrom = LocalDate.parse(cardFrom.getCardExpireDate(), formatter);
         LocalDate expireDateTo = LocalDate.parse(cardTo.getCardExpireDate(), formatter);
 
-        if (cardFrom.getCardType().getName().equals("VISA") && !cardTo.getCardType().getName().equals("VISA")) {
+        if (cardFrom.getCardType().getCurrencyType().getName().equals("USD") && !cardTo.getCardType().getCurrencyType().getName().equals("USD")) {
             throw new CardException("You can't transfer money to other card types");
         }
 
-        if ((cardFrom.getCardType().getName().equals("UZCARD") || cardFrom.getCardType().getName().equals("HUMO") &&
-                cardTo.getCardType().getName().equals("VISA"))) {
-            throw new CardException("You can't transfer money to VISA card");
+        if (cardFrom.getCardType().getCurrencyType().getName().equals("UZS") && !cardTo.getCardType().getCurrencyType()
+                .getName().equals("UZS")) {
+            throw new CardException("You can't transfer money to other card types");
 
         }
         if (!cardFrom.getIsActive()) {
@@ -128,14 +107,20 @@ public class CheckCard {
 
     }
 
-    public boolean checkPin(String pin, String cardPin) {
-        // check pin 3 times and block card
-        for (int i = 0; i < 3; i++) {
-            if (pin.equals(cardPin)) {
-                return true;
-            }
+    public boolean checkPin(String pin, Card card) {
+        int pinCount = card.getCheckCardQuantity();
+        if (card.getCardPin().equals(pin)) {
+            card.setCheckCardQuantity(0);
+            cardRepository.save(card);
+            return true;
+        } else if (pinCount <= 2) {
+            card.setCheckCardQuantity(pinCount + 1);
+            cardRepository.save(card);
+            throw new CheckPinException("Pin is incorrect attempts left: " + (3 - pinCount));
+        }else {
+            card.setIsActive(false);
+            cardRepository.save(card);
+            throw new CheckPinException("Card is blocked");
         }
-        return false;
     }
-
 }

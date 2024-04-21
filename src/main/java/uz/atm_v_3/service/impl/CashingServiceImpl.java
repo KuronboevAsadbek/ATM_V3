@@ -42,6 +42,7 @@ public class CashingServiceImpl implements CashingService {
             throw new CardException("Card blocked or not found");
         }
         checkCard.checkCardForCashing(cashingRequestDTO, card);
+
         double amountDouble = Double.parseDouble(cashingRequestDTO.getAmount());
         double commission = amountDouble * 0.01;
         double cashingAmount = amountDouble;
@@ -111,9 +112,7 @@ public class CashingServiceImpl implements CashingService {
             card.setBalance(String.valueOf(cardBalance2));
             cardRepository.save(card);
 
-        } else if (cashingRequestDTO.getCashingBanknoteType().
-
-                equals("MIXED")) {
+        } else if (cashingRequestDTO.getCashingBanknoteType().equals("MIXED")) {
             Atm atm200000 = atmRepository.findBanknoteByType("TWO_HUNDRED_THOUSAND");
             Atm atm100000 = atmRepository.findBanknoteByType("HUNDRED_THOUSAND");
             Atm atm50000 = atmRepository.findBanknoteByType("FIFTY_THOUSAND");

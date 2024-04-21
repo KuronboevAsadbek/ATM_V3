@@ -47,5 +47,8 @@ public class Card implements Serializable {
     @JoinColumn(name = "card_type_id")
     private CardType cardType;
 
+    @Column(name = "check_card_quantity")
+    private Integer checkCardQuantity;
+
 
 }

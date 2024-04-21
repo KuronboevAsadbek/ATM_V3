@@ -49,6 +49,31 @@ public class GlobalExceptionHandler {
                 );
     }
 
+    @ExceptionHandler(CurrencyTypeException.class)
+    @ResponseBody
+    public ResponseEntity<Object> handleCurrencyTypeException(CurrencyTypeException currencyTypeException) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse_2
+                        .builder()
+                        .message(currencyTypeException.getMessage())
+                        .build()
+                );
+    }
+
+    @ExceptionHandler(CheckPinException.class)
+    @ResponseBody
+    public ResponseEntity<Object> handleCheckPinException(CheckPinException checkPinException) {
+//        LOG.error("Card balance Not Filled: {}", e.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse_2
+                        .builder()
+                        .message(checkPinException.getMessage())
+                        .build()
+                );
+    }
+
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     ResponseEntity<ErrorResponse> on(MethodArgumentNotValidException ex) {

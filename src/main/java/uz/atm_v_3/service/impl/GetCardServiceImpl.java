@@ -64,19 +64,20 @@ public class GetCardServiceImpl implements GetCardService {
         try {
             clientInfoService.getLogger(request);
             String sql = ("""
-                        SELECT c.id           AS id,
+                    SELECT c.id               AS id,
                            c.balance          AS cardBalance,
                            c.card_number      AS cardNumber,
                            c.card_expire_date AS cardExpireDate,
                            c.card_cvc         AS cardCVC,
                            c.card_pin         AS cardPin,
-                           c.card_type        AS cardType,
+                           ct.name            AS cardTypeName,
                            c.is_active        AS cardStatus,
                            ch.name            AS cardHolderName,
                            ch.address         AS cardHolderAddress,
                            ch.phone_number    AS cardHolderPhoneNumber
                     FROM card c
                              JOIN card_holder ch ON c.card_holder_id = ch.id
+                             JOIN card_type ct ON c.card_type_id = ct.id
                     WHERE ch.pin_fl = :pinfl
                     """);
             Query query = entityManager.createNativeQuery(sql, CardResponseDTO.class);
@@ -112,7 +113,7 @@ public class GetCardServiceImpl implements GetCardService {
             cardResponseDTO.setCardPin(card.get(i).getCardPin());
             cardResponseDTO.setCardStatus(card.get(i).getIsActive());
             cardResponseDTO.setCardExpireDate(card.get(i).getCardExpireDate());
-            cardResponseDTO.setCardType(String.valueOf(card.get(i).getCardType()));
+            cardResponseDTO.setCardTypeName(String.valueOf((card.get(i).getCardType())));
             cardResponseDTOS.add(cardResponseDTO);
         }
         return cardResponseDTOS;
@@ -132,7 +133,7 @@ public class GetCardServiceImpl implements GetCardService {
         cardResponseDTO.setCardPin(card.getCardPin());
         cardResponseDTO.setCardStatus(card.getIsActive());
         cardResponseDTO.setCardExpireDate(card.getCardExpireDate());
-        cardResponseDTO.setCardType(String.valueOf(card.getCardType()));
+        cardResponseDTO.setCardTypeName(String.valueOf(card.getCardType()));
         return cardResponseDTO;
     }
 }

@@ -19,7 +19,7 @@ public class GetCardController {
 
     private final GetCardService getCardService;
 
-    @GetMapping(GET_ALL_CARDS)
+    @GetMapping(GET_ALL)
     public ResponseEntity<List<CardResponseDTO>> getAllCards(HttpServletRequest httpServletRequest) {
         return ResponseEntity.ok(getCardService.getAllCards(httpServletRequest));
     }

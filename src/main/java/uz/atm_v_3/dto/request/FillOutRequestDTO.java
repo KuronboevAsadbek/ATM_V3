@@ -18,7 +18,6 @@ public class FillOutRequestDTO {
     private String cardPin;
     @JsonProperty("amount")
     private String amount;
-    @JsonProperty("cashing_banknote_type")
-    private String cashingBanknoteType;
+
 
 }

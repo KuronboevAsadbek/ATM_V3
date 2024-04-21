@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import uz.atm_v_3.dto.request.FillOutRequestDTO;
 import uz.atm_v_3.dto.response.FillOutResponseDTO;
 import uz.atm_v_3.exception.CardException;
+import uz.atm_v_3.exception.CardTypeException;
+import uz.atm_v_3.exception.CheckPinException;
 import uz.atm_v_3.model.Card;
 import uz.atm_v_3.repository.CardRepository;
 import uz.atm_v_3.service.FillOutCardService;
@@ -26,28 +28,28 @@ public class FillOutCardServiceImpl implements FillOutCardService {
     private final ClientInfoService clientInfoService;
     private final CardRepository cardRepository;
     private final CheckCard cardCheck;
+    private final CheckCard checkCard;
 
 
     @Override
+
     public FillOutResponseDTO fillCardBalance(FillOutRequestDTO fillOutRequestDTO, HttpServletRequest request) {
-        Card card = cardRepository.findCardByCardNumber(fillOutRequestDTO.getCardNumber());
+
+        try {
+            Card card = cardRepository.findCardByCardNumber(fillOutRequestDTO.getCardNumber());
         if (card == null) {
             throw new CardException("Card blocked or not found");
         }
 
-        if (!cardCheck.checkPin(fillOutRequestDTO.getCardPin(), card.getCardPin())) {
-            card.setIsActive(false);
-            cardRepository.save(card);
-            throw new CardException("Card is blocked or not found");
-        }
-        cardCheck.checkingForFillOut(fillOutRequestDTO, card);
+
         double amountDouble = Double.parseDouble(fillOutRequestDTO.getAmount());
+            if (checkCard.checkPin(fillOutRequestDTO.getCardPin(), card))
+                cardCheck.checkingForFillOut(fillOutRequestDTO, card);
         String balanceWithoutCommas = card.getBalance().replaceAll(",", ".");
         double cardBalance = Double.parseDouble(balanceWithoutCommas);
         String cardBalance2;
 
 
-        try {
             clientInfoService.getLogger(request);
             double commission = amountDouble * 0.01;
             cardBalance += amountDouble - commission;
@@ -61,8 +63,9 @@ public class FillOutCardServiceImpl implements FillOutCardService {
                     .filledAmount(String.valueOf(amountDouble))
                     .commission(String.valueOf(commission))
                     .build();
-        } catch (Exception e) {
-            LOG.error("Card balance Not Filled: {}", e.getMessage());
+        } catch (CheckPinException e) {
+            throw new CheckPinException(e.getMessage());
+        }catch (Exception e) {
             throw new CardException("Error fillCardBalance card balance: " + e.getMessage());
         }
     }

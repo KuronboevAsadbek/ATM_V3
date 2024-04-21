@@ -46,7 +46,7 @@ public class TransferMoneyServiceImpl implements TransferMoneyService {
         String cardBalance2;
         try {
             clientInfoService.getLogger(request);
-            if (cardFrom.getCardType().equals(CardType.HUMO) && cardTo.getCardType().equals(CardType.HUMO)) {
+            if (cardFrom.getCardType().getName().equals("HUMO") && cardTo.getCardType().getName().equals("HUMO")) {
                 commission = 0;
             }
             cardBalanceFrom -= amountDouble + commission;

@@ -21,10 +21,14 @@ public class Atm implements Serializable {
     private Long id;
 
     @Column(name = "banknote_type")
-    @Enumerated(EnumType.STRING)
-    private BanknoteType banknoteType;
+    private String banknoteType;
 
     @Column(name = "banknote_count")
     private Integer banknoteCount;
+
+    @JoinColumn(name = "currency_type_id")
+    @ManyToOne
+    private CurrencyType currencyType;
+
 
 }
