@@ -18,6 +18,8 @@ public class FillOutRequestDTO {
     private String cardPin;
     @JsonProperty("amount")
     private String amount;
+    @JsonProperty("cheque_request")
+    private boolean chequeRequest;
 
 
 }

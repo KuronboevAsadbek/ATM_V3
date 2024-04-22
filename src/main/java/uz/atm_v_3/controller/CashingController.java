@@ -20,10 +20,11 @@ public class CashingController {
 
     private final CashingService cashingService;
 
-    @PostMapping(CARD)
+    @PostMapping(UZS)
     public ResponseEntity<CashingResponseDTO> cashingMoneyWithBanknote(@RequestBody CashingRequestDTO cashingRequestDTO,
                                                                        HttpServletRequest request) {
-        return ResponseEntity.ok(cashingService.cashingCardBalanceWithBanknote(cashingRequestDTO, request));
+        return ResponseEntity.ok(cashingService.cashingCard(cashingRequestDTO, request));
     }
+
 
 }

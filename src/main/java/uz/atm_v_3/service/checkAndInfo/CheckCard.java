@@ -113,10 +113,10 @@ public class CheckCard {
             card.setCheckCardQuantity(0);
             cardRepository.save(card);
             return true;
-        } else if (pinCount <= 2) {
+        } else if (pinCount <= 1) {
             card.setCheckCardQuantity(pinCount + 1);
             cardRepository.save(card);
-            throw new CheckPinException("Pin is incorrect attempts left: " + (3 - pinCount));
+            throw new CheckPinException("Pin is incorrect attempts left: " + (2 - pinCount));
         }else {
             card.setIsActive(false);
             cardRepository.save(card);

@@ -20,4 +20,6 @@ public class CashingRequestDTO {
     private String amount;
     @JsonProperty("cashing_banknote_type")
     private String cashingBanknoteType;
+    @JsonProperty("cheque_request")
+    private boolean chequeRequest;
 }

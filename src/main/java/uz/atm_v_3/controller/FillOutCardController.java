@@ -11,8 +11,7 @@ import uz.atm_v_3.dto.request.FillOutRequestDTO;
 import uz.atm_v_3.dto.response.FillOutResponseDTO;
 import uz.atm_v_3.service.FillOutCardService;
 
-import static uz.atm_v_3.utils.Endpoint.CARD;
-import static uz.atm_v_3.utils.Endpoint.FILL_OUT_CARD;
+import static uz.atm_v_3.utils.Endpoint.*;
 
 @RequiredArgsConstructor
 @RequestMapping(FILL_OUT_CARD)
@@ -21,9 +20,10 @@ public class FillOutCardController {
 
     private final FillOutCardService fillOutCardService;
 
-    @PostMapping(CARD)
+    @PostMapping(UZS)
     public ResponseEntity<FillOutResponseDTO> fillOutCard(@RequestBody FillOutRequestDTO fillOutRequestDTO,
                                                           HttpServletRequest request) {
-        return ResponseEntity.ok(fillOutCardService.fillCardBalance(fillOutRequestDTO, request));
+        return ResponseEntity.ok(fillOutCardService.fillOutCardBalance(fillOutRequestDTO, request));
     }
+
 }

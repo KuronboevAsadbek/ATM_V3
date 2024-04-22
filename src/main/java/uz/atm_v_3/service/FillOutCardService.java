@@ -6,6 +6,7 @@ import uz.atm_v_3.dto.response.FillOutResponseDTO;
 
 public interface FillOutCardService {
 
-    FillOutResponseDTO fillCardBalance(FillOutRequestDTO fillOutRequestDTO,
-                                       HttpServletRequest request);
+
+    FillOutResponseDTO fillOutCardBalance(FillOutRequestDTO fillOutRequestDTO,
+                                         HttpServletRequest request);
 }

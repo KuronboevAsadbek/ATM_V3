@@ -3,18 +3,23 @@ package uz.atm_v_3.exception;
 
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import uz.atm_v_3.service.impl.CardServiceImpl;
 import uz.atm_v_3.utils.ResponseCode;
 
 @ControllerAdvice
+@RequiredArgsConstructor
 @Slf4j
 public class GlobalExceptionHandler {
 
+    private static final Logger LOG = LoggerFactory.getLogger(CardServiceImpl.class);
     @Getter
     @Setter
     @NoArgsConstructor
@@ -70,6 +75,32 @@ public class GlobalExceptionHandler {
                 .body(ErrorResponse_2
                         .builder()
                         .message(checkPinException.getMessage())
+                        .build()
+                );
+    }
+
+
+
+    @ExceptionHandler(CashingTypeException.class)
+    @ResponseBody
+    ResponseEntity<Object> handleCashingTypeException(CashingTypeException cashingTypeException) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse_2
+                        .builder()
+                        .message(cashingTypeException.getMessage())
+                        .build()
+                );
+    }
+
+    @ExceptionHandler(BankNoteException.class)
+    @ResponseBody
+    ResponseEntity<Object> handleBankNoteException(BankNoteException bankNoteException) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse_2
+                        .builder()
+                        .message(bankNoteException.getMessage())
                         .build()
                 );
     }

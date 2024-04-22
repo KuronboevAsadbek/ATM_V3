@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import uz.atm_v_3.dto.request.FillOutRequestDTO;
 import uz.atm_v_3.dto.response.FillOutResponseDTO;
 import uz.atm_v_3.exception.CardException;
-import uz.atm_v_3.exception.CardTypeException;
 import uz.atm_v_3.exception.CheckPinException;
 import uz.atm_v_3.model.Card;
 import uz.atm_v_3.repository.CardRepository;
@@ -32,41 +31,43 @@ public class FillOutCardServiceImpl implements FillOutCardService {
 
 
     @Override
-
-    public FillOutResponseDTO fillCardBalance(FillOutRequestDTO fillOutRequestDTO, HttpServletRequest request) {
-
+    public FillOutResponseDTO fillOutCardBalance(FillOutRequestDTO fillOutRequestDTO, HttpServletRequest request) {
         try {
             Card card = cardRepository.findCardByCardNumber(fillOutRequestDTO.getCardNumber());
-        if (card == null) {
-            throw new CardException("Card blocked or not found");
-        }
-
-
-        double amountDouble = Double.parseDouble(fillOutRequestDTO.getAmount());
+            if (card == null) {
+                throw new CardException("Card blocked or not found");
+            }
+            clientInfoService.getLogger(request);
+            double amountDouble = Double.parseDouble(fillOutRequestDTO.getAmount());
             if (checkCard.checkPin(fillOutRequestDTO.getCardPin(), card))
                 cardCheck.checkingForFillOut(fillOutRequestDTO, card);
-        String balanceWithoutCommas = card.getBalance().replaceAll(",", ".");
-        double cardBalance = Double.parseDouble(balanceWithoutCommas);
-        String cardBalance2;
+            String balanceWithoutCommas = card.getBalance().replaceAll(",", ".");
+            double cardBalance = Double.parseDouble(balanceWithoutCommas);
+            String cardBalance2;
 
-
-            clientInfoService.getLogger(request);
             double commission = amountDouble * 0.01;
             cardBalance += amountDouble - commission;
             cardBalance2 = String.format("%.2f", cardBalance);
             card.setBalance(String.valueOf(cardBalance2));
             cardRepository.save(card);
+
             LOG.info("Card balance filled: {}", gson.toJson(card));
-            return FillOutResponseDTO.builder()
-                    .message("Card balance filled")
-                    .balance(card.getBalance())
-                    .filledAmount(String.valueOf(amountDouble))
-                    .commission(String.valueOf(commission))
-                    .build();
+            if (fillOutRequestDTO.isChequeRequest()) {
+                return FillOutResponseDTO.builder()
+                        .message("Card balance filled")
+                        .balance(card.getBalance())
+                        .filledAmount(String.valueOf(amountDouble))
+                        .commission(String.valueOf(commission))
+                        .build();
+            }else {
+                return FillOutResponseDTO.builder()
+                        .message("Card balance filled")
+                        .build();
+            }
         } catch (CheckPinException e) {
             throw new CheckPinException(e.getMessage());
-        }catch (Exception e) {
-            throw new CardException("Error fillCardBalance card balance: " + e.getMessage());
+        } catch (Exception e) {
+            throw new CardException("Error Fill Card Balance: " + e.getMessage());
         }
     }
 }

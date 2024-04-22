@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import uz.atm_v_3.dto.request.CurrencyTypeRequestDTO;
 import uz.atm_v_3.dto.response.CurrencyTypeResponseDTO;
 import uz.atm_v_3.dto.response.ResponseDTO;
-import uz.atm_v_3.exception.CurrencyTypeException;
 import uz.atm_v_3.service.CurrencyTypeService;
 
 import static uz.atm_v_3.utils.Endpoint.*;

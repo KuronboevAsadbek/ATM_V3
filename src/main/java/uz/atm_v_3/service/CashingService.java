@@ -7,8 +7,7 @@ import uz.atm_v_3.dto.response.CashingResponseDTO;
 
 public interface CashingService {
 
-    CashingResponseDTO cashingCardBalanceWithBanknote(CashingRequestDTO cashingOrFillOutRequestDTO
-            , HttpServletRequest request);
-
+    CashingResponseDTO cashingCard(CashingRequestDTO cashingRequestDTO,
+                                   HttpServletRequest httpServletRequest);
 
 }

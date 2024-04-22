@@ -1,5 +1,6 @@
 package uz.atm_v_3.dto.response;
 
+
 import lombok.*;
 
 @Getter
@@ -7,7 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ResponseDTO {
+public class CashingTypeResponseDTO {
 
-    private String message;
+    private Long id;
+
+    private String name;
 }
