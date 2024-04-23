@@ -8,6 +8,8 @@ import uz.atm_v_3.dto.request.CashingRequestDTO;
 import uz.atm_v_3.dto.response.CashingResponseDTO;
 import uz.atm_v_3.exception.BankNoteException;
 import uz.atm_v_3.exception.CardException;
+import uz.atm_v_3.exception.CardTypeException;
+import uz.atm_v_3.exception.CheckPinException;
 import uz.atm_v_3.model.BanknoteType;
 import uz.atm_v_3.model.Card;
 import uz.atm_v_3.model.CardHistory;
@@ -18,10 +20,6 @@ import uz.atm_v_3.service.CashingService;
 import uz.atm_v_3.service.checkAndInfo.CheckCard;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -40,15 +38,17 @@ public class CashingServiceImpl implements CashingService {
     public CashingResponseDTO cashingCard(CashingRequestDTO cashingRequestDTO,
                                           HttpServletRequest httpServletRequest) {
         try {
+
+            clientInfoService.getLogger(httpServletRequest);
             CardHistory cardHistory = new CardHistory();
             Date date = new Date();
-            clientInfoService.getLogger(httpServletRequest);
             Card card = cardRepository.findCardByCardNumber(cashingRequestDTO.getCardNumber());
+
             if (card == null) {
                 throw new CardException("Card blocked or not found");
             }
-
             checkCard.checkCardForCashing(cashingRequestDTO, card);
+            checkCard.checkPin(cashingRequestDTO.getCardPin(), card);
             double amountDouble = Double.parseDouble(cashingRequestDTO.getAmount());
             double commission = amountDouble * 0.01;
             double cashingAmount = amountDouble;
@@ -56,8 +56,8 @@ public class CashingServiceImpl implements CashingService {
             double cardBalance = Double.parseDouble(balanceWithoutCommas);
             String cardBalance2;
 
-            if (card.getCardType().getName().equals("UZS")) {
-                throw new CardException("Amount must be multiple of 5000");
+            if (card.getCardType().getCurrencyType().getName().equals("UZS") && amountDouble % 5000 != 0) {
+                throw new BankNoteException("Amount must be multiple of 5000");
             }
 
             if (cardBalance < amountDouble + commission) {
@@ -95,7 +95,7 @@ public class CashingServiceImpl implements CashingService {
                         amountDouble -= count * banknoteType.getNominal();
                         banknoteType.setQuantity(banknoteType.getQuantity() - count);
                     } else if (amountDouble > banknoteType.getNominal() && banknoteType.getQuantity() == 0) {
-                        throw new BankNoteException("ATM is empty");
+                        throw new BankNoteException("Choose another amount");
                     }
                 }
                 if (amountDouble != 0) {
@@ -110,7 +110,7 @@ public class CashingServiceImpl implements CashingService {
             cardHistory.setFromCard(card);
             cardHistory.setAmount(String.valueOf(cashingAmount));
             cardHistory.setCommission(String.valueOf(commission));
-            cardHistory.setDate(date.toString());
+
             cardHistoryRepository.save(cardHistory);
             return CashingResponseDTO.builder()
                     .message("Cashing is successful")
@@ -118,8 +118,9 @@ public class CashingServiceImpl implements CashingService {
                     .commission(String.valueOf(commission))
                     .balance(card.getBalance())
                     .build();
+
         } catch (Exception e) {
-            throw new BankNoteException("ATM is empty");
+            throw new BankNoteException("Error while cashing card: " + e.getMessage());
         }
     }
 }

@@ -7,15 +7,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import uz.atm_v_3.dto.request.FillOutRequestDTO;
 import uz.atm_v_3.dto.response.FillOutResponseDTO;
 import uz.atm_v_3.exception.CardException;
-import uz.atm_v_3.exception.CheckPinException;
 import uz.atm_v_3.model.Card;
+import uz.atm_v_3.model.CardHistory;
+import uz.atm_v_3.repository.CardHistoryRepository;
 import uz.atm_v_3.repository.CardRepository;
 import uz.atm_v_3.service.FillOutCardService;
 import uz.atm_v_3.service.checkAndInfo.CheckCard;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
+
+import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
@@ -28,11 +32,14 @@ public class FillOutCardServiceImpl implements FillOutCardService {
     private final CardRepository cardRepository;
     private final CheckCard cardCheck;
     private final CheckCard checkCard;
+    private final CardHistoryRepository cardHistoryRepository;
 
 
     @Override
+    @Transactional
     public FillOutResponseDTO fillOutCardBalance(FillOutRequestDTO fillOutRequestDTO, HttpServletRequest request) {
         try {
+            CardHistory cardHistory = new CardHistory();
             Card card = cardRepository.findCardByCardNumber(fillOutRequestDTO.getCardNumber());
             if (card == null) {
                 throw new CardException("Card blocked or not found");
@@ -49,6 +56,13 @@ public class FillOutCardServiceImpl implements FillOutCardService {
             cardBalance += amountDouble - commission;
             cardBalance2 = String.format("%.2f", cardBalance);
             card.setBalance(String.valueOf(cardBalance2));
+
+            cardHistory.setToCard(card);
+            cardHistory.setAmount(String.valueOf(amountDouble));
+            cardHistory.setCommission(String.valueOf(commission));
+            Date date = new Date();
+
+            cardHistoryRepository.save(cardHistory);
             cardRepository.save(card);
 
             LOG.info("Card balance filled: {}", gson.toJson(card));
@@ -64,8 +78,6 @@ public class FillOutCardServiceImpl implements FillOutCardService {
                         .message("Card balance filled")
                         .build();
             }
-        } catch (CheckPinException e) {
-            throw new CheckPinException(e.getMessage());
         } catch (Exception e) {
             throw new CardException("Error Fill Card Balance: " + e.getMessage());
         }

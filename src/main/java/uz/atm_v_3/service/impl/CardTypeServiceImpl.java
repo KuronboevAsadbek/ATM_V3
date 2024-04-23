@@ -25,7 +25,7 @@ import java.util.List;
 @Slf4j
 public class CardTypeServiceImpl implements CardTypeService {
 
-    private final CurrencyTypeRepository currencyTypeRepository;
+
     private final Gson gson;
     private static final Logger LOG = LoggerFactory.getLogger(CardServiceImpl.class);
     private final ClientInfoService clientInfoService;

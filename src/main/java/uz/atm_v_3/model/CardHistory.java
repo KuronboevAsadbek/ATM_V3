@@ -7,10 +7,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CurrentTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,10 +33,10 @@ public class CardHistory implements Serializable {
     @Column(name = "commission")
     private String commission;
 
-    @Column(name = "date")
-    @JsonFormat(pattern = "dd.MM.yyy:dd.MM.yyyy:HH:mm:ss")
-    @DateTimeFormat(pattern = "dd.MM.yyy:dd.MM.yyyy:HH:mm:ss")
-    private String date;
+    @Column(name = "date", nullable = false, updatable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @CurrentTimestamp
+    private Instant date;
 
     @JoinColumn(name = "from_card_id")
     @ManyToOne

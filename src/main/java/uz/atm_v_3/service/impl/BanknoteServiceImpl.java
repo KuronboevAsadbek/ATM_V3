@@ -112,7 +112,7 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
                     .build();
         } catch (Exception e) {
             log.error("Error while deleting banknote type: {}", e.getMessage());
-            throw new CashingTypeException("Banknote type not found");
+            throw new CashingTypeException("Banknote type not found: " + e.getMessage());
         }
     }
 }

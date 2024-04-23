@@ -7,7 +7,6 @@ import uz.atm_v_3.dto.response.ResponseDTO;
 
 public interface CardService {
 
-    CardResponseDTO createCard(CardRequestDTO cardRequestDTO, HttpServletRequest request);
     ResponseDTO updateCard(Long id, CardRequestDTO cardRequestDTO, HttpServletRequest request);
 
     CardResponseDTO creatNewCard(CardRequestDTO cardRequestDTO, HttpServletRequest request);

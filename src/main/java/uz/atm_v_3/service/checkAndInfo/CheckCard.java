@@ -28,14 +28,13 @@ public class CheckCard {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate expireDate = LocalDate.parse(card.getCardExpireDate(), formatter);
 
+
+
         if (!card.getIsActive()) {
             throw new CardException("Card is blocked");
         }
         if (expireDate.isBefore(LocalDate.now())) {
             throw new CardException("Card is expired");
-        }
-        if (!card.getCardPin().equals(cashingRequestDTO.getCardPin())) {
-            throw new CardException("Card pin is incorrect");
         }
 
     }
@@ -87,9 +86,6 @@ public class CheckCard {
         }
         if (expireDateTo.isBefore(LocalDate.now())) {
             throw new CardException("Receiver card is expired");
-        }
-        if (!cardFrom.getCardPin().equals(transferRequestDTO.getPin())) {
-            throw new CardException("Card pin is incorrect");
         }
 
         if (cardFrom.getCardNumber().equals(cardTo.getCardNumber())) {

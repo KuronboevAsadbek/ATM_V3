@@ -42,6 +42,7 @@ public class GlobalExceptionHandler {
                 );
     }
 
+
     @ExceptionHandler(CardException.class)
     @ResponseBody
     public ResponseEntity<Object> handleCardException(CardException cardException) {
@@ -101,6 +102,18 @@ public class GlobalExceptionHandler {
                 .body(ErrorResponse_2
                         .builder()
                         .message(bankNoteException.getMessage())
+                        .build()
+                );
+    }
+
+    @ExceptionHandler(CardHistoryException.class)
+    @ResponseBody
+    ResponseEntity<Object> handleCardHistoryException(CardHistoryException cardHistoryException) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse_2
+                        .builder()
+                        .message(cardHistoryException.getMessage())
                         .build()
                 );
     }

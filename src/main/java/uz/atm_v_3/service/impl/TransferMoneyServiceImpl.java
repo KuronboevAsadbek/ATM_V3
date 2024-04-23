@@ -7,14 +7,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import uz.atm_v_3.dto.request.TransferRequestDTO;
 import uz.atm_v_3.dto.response.TransferResponseDTO;
 import uz.atm_v_3.exception.CardException;
 import uz.atm_v_3.model.Card;
+import uz.atm_v_3.model.CardHistory;
+import uz.atm_v_3.repository.CardHistoryRepository;
 import uz.atm_v_3.repository.CardRepository;
 import uz.atm_v_3.service.TransferMoneyService;
 import uz.atm_v_3.service.checkAndInfo.CheckCard;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
+
+import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
@@ -26,10 +31,14 @@ public class TransferMoneyServiceImpl implements TransferMoneyService {
     private final ClientInfoService clientInfoService;
     private final CardRepository cardRepository;
     private final CheckCard cardCheck;
+    private final CardHistoryRepository cardHistoryRepository;
 
 
     @Override
+    @Transactional
     public TransferResponseDTO transferMoney(TransferRequestDTO transferRequestDTO, HttpServletRequest request) {
+
+        CardHistory cardHistory = new CardHistory();
         Card cardFrom = cardRepository.findCardByCardNumber(transferRequestDTO.getFromCardNumber());
         Card cardTo = cardRepository.findCardByCardNumber(transferRequestDTO.getToCardNumber());
         if (cardFrom == null || cardTo == null) {
@@ -57,6 +66,13 @@ public class TransferMoneyServiceImpl implements TransferMoneyService {
             cardTo.setBalance(String.valueOf(cardBalance2));
             cardRepository.save(cardFrom);
             cardRepository.save(cardTo);
+
+            cardHistory.setFromCard(cardFrom);
+            cardHistory.setToCard(cardTo);
+            cardHistory.setAmount(String.valueOf(amountDouble));
+            cardHistory.setCommission(String.valueOf(commission));
+            cardHistoryRepository.save(cardHistory);
+
             LOG.info("Money transferred: {}", gson.toJson(cardFrom));
             return TransferResponseDTO.builder()
                     .fromCardNumber("Card From: " + cardFrom.getCardNumber())

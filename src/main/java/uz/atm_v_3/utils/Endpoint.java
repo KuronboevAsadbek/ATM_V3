@@ -28,5 +28,6 @@ public class Endpoint {
     public static final String GET = "/get";
     public static final String CURRENCY_TYPE = "/currencytype";
     public static final String BANKNOTE_TYPE = "/banknotetype";
+    public static final String CARD_HISTORY = "/cardhistory";
 
 }

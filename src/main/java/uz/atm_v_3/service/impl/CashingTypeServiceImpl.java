@@ -35,7 +35,7 @@ public class CashingTypeServiceImpl implements CashingTypeService {
                 return cashingTypeMapper.toDto(cashingType);
             }
         }catch (Exception e){
-            throw new CashingTypeException(e.getMessage());
+            throw new CashingTypeException("Cashing type not created: " + e.getMessage());
         }
     }
 
@@ -54,7 +54,7 @@ public class CashingTypeServiceImpl implements CashingTypeService {
                 return cashingTypeMapper.toDto(cashingType);
             }
         } catch (Exception e) {
-            throw new CashingTypeException(e.getMessage());
+            throw new CashingTypeException("Cashing type not updated: " + e.getMessage());
         }
     }
 
@@ -67,7 +67,7 @@ public class CashingTypeServiceImpl implements CashingTypeService {
             cashingTypeRepository.delete(cashingType);
             return cashingTypeMapper.toDto(cashingType);
         } catch (Exception e) {
-            throw new CashingTypeException(e.getMessage());
+            throw new CashingTypeException("Cashing type not deleted: " + e.getMessage());
         }
     }
 
@@ -77,7 +77,7 @@ public class CashingTypeServiceImpl implements CashingTypeService {
             clientInfoService.getLogger(httpServletRequest);
             return cashingTypeMapper.toDto(cashingTypeRepository.findAll());
         } catch (Exception e) {
-            throw new CashingTypeException(e.getMessage());
+            throw new CashingTypeException("Cashing types not found: " + e.getMessage());
         }
     }
 }
