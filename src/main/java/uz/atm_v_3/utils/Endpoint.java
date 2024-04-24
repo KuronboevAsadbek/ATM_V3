@@ -16,6 +16,7 @@ public class Endpoint {
     public static final String DELETE = "/delete";
     public static final String GET_CARD_BY_ID = "/{id}";
     public static final String GET_ALL = "/all";
+    public static final String BY_PERIOD = "/period";
     public static final String GET_ALL_CARDS_BY_CARD_HOLDER_PINFL = "/all/pinfl/";
     public static final String FILL_OUT_BALANCE = "/fillout/balance";
     public static final String TRANSFER = "/transfer";

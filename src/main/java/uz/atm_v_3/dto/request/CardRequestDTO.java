@@ -16,6 +16,13 @@ import uz.atm_v_3.model.CardType;
 @AllArgsConstructor
 @Builder
 @Validated
+/**
+ * This class is responsible for creating a request to add a card.
+ * It contains the following fields:
+ * - cardPin
+ * - cardHolderId
+ * - cardTypeId
+ */
 public class CardRequestDTO {
 
     @NotEmpty

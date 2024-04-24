@@ -21,6 +21,10 @@ import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
 import java.util.Date;
 
+/**
+ * The FillOutCardServiceImpl class encapsulates methods for filling out a card.
+ */
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -35,12 +39,21 @@ public class FillOutCardServiceImpl implements FillOutCardService {
     private final CardHistoryRepository cardHistoryRepository;
 
 
+    /**
+     * Fills out a card.
+     *
+     * @param fillOutRequestDTO The DTO containing information about the card to be filled out.
+     * @param request           The HTTP servlet request object.
+     * @return The DTO representing the filled out card.
+     * @throws CardException If an error occurs during filling out.
+     */
     @Override
     @Transactional
     public FillOutResponseDTO fillOutCardBalance(FillOutRequestDTO fillOutRequestDTO, HttpServletRequest request) {
         try {
             CardHistory cardHistory = new CardHistory();
             Card card = cardRepository.findCardByCardNumber(fillOutRequestDTO.getCardNumber());
+            // Check if the card is blocked or not found and throw an exception if it is.
             if (card == null) {
                 throw new CardException("Card blocked or not found");
             }
@@ -66,6 +79,8 @@ public class FillOutCardServiceImpl implements FillOutCardService {
             cardRepository.save(card);
 
             LOG.info("Card balance filled: {}", gson.toJson(card));
+
+            // If the request is a cheque request, return the filled amount and commission.
             if (fillOutRequestDTO.isChequeRequest()) {
                 return FillOutResponseDTO.builder()
                         .message("Card balance filled")

@@ -38,6 +38,15 @@ public class CardServiceImpl implements CardService {
     private final CardTypeRepository cardTypeRepository;
 
 
+    /**
+     * Updates the card information.
+     *
+     * @param id             The ID of the card to be updated.
+     * @param cardRequestDTO The DTO containing information about the card to be updated.
+     * @param request        The HTTP servlet request object.
+     * @return The DTO representing the updated card.
+     * @throws CardException If the card is not found.
+     */
     @Override
     public ResponseDTO updateCard(Long id, CardRequestDTO cardRequestDTO, HttpServletRequest request) {
         try {
@@ -55,6 +64,14 @@ public class CardServiceImpl implements CardService {
         }
     }
 
+    /**
+     * Creates a new card.
+     *
+     * @param cardRequestDTO The DTO containing information about the card to be created.
+     * @param request        The HTTP servlet request object.
+     * @return The DTO representing the created card.
+     * @throws CardException If an error occurs during card creation.
+     */
     @Override
     public CardResponseDTO creatNewCard(CardRequestDTO cardRequestDTO, HttpServletRequest request) {
         try {
@@ -76,6 +93,7 @@ public class CardServiceImpl implements CardService {
             card.setCardNumber(newCard);
             card.setCardExpireDate(String.valueOf(LocalDate.now().plusYears(cardType.getExpirationYear())));
             card.setIsActive(Boolean.TRUE);
+            // If the currency type is not UZS, set the card CVC.
             if (!cardType.getCurrencyType().getName().equals("UZS")) {
                 card.setCardCVC(cardCVC);
             }
@@ -95,7 +113,7 @@ public class CardServiceImpl implements CardService {
             LOG.info("Card created: {}", gson.toJson(cardResponseDTO));
             return cardResponseDTO;
         }catch (Exception e){
-            LOG.error("Card Not Created: {}", e.getMessage());
+
             throw new CardException("Error creating card: " + e.getMessage());
         }
     }

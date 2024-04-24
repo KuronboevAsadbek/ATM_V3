@@ -14,6 +14,11 @@ import org.springframework.validation.annotation.Validated;
 @NoArgsConstructor
 @AllArgsConstructor
 @Validated
+/**
+ * This class is responsible for creating a request to add a currency type.
+ * It contains the following fields:
+ * - name
+ */
 public class CurrencyTypeRequestDTO {
 
 

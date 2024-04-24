@@ -10,6 +10,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * This class is responsible for creating a request to cash out money.
+ * It contains the following fields:
+ * - cardNumber
+ * - cardPin
+ * - amount
+ * - cashingBanknoteType
+ * - chequeRequest
+ */
 public class CashingTypeRequestDTO {
 
     @JsonProperty(value = "name")

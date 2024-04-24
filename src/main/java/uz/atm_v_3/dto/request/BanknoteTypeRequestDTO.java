@@ -12,6 +12,15 @@ import uz.atm_v_3.model.CurrencyType;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * This class is responsible for creating a request to add a banknote type.
+ * It contains the following fields:
+ * - name
+ * - quantity
+ * - nominal
+ * - cashingTypeId
+ * - currencyTypeId
+ */
 public class BanknoteTypeRequestDTO {
 
     private String name;

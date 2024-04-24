@@ -10,6 +10,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * This class is responsible for creating a request to transfer money.
+ * It contains the following fields:
+ * - fromCardNumber
+ * - toCardNumber
+ * - amount
+ * - pin
+ */
 public class TransferRequestDTO {
 
     @JsonProperty("from_card_number")

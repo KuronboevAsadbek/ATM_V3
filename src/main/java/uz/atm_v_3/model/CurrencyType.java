@@ -14,6 +14,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Table(name = "currency_type")
+/**
+ * This class is responsible for creating a table in the database that will store information about currency types.
+ * The table will contain the following columns:
+ * id - the primary key of the table.
+ * name - the name of the currency type.
+ */
 public class CurrencyType implements Serializable {
 
     @Id

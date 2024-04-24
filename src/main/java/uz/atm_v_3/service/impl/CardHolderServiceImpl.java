@@ -16,6 +16,10 @@ import uz.atm_v_3.repository.CardHolderRepository;
 import uz.atm_v_3.service.CardHolderService;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
+/**
+ * The CardHolderServiceImpl class encapsulates methods for creating, updating, and deleting card holders.
+ */
+
 import java.util.List;
 
 @Service
@@ -31,10 +35,21 @@ public class CardHolderServiceImpl implements CardHolderService {
     private final CardHolderMapper cardHolderMapper;
 
 
+
+    /**
+     * Creates a new card holder.
+     *
+     * @param cardHolderRequestDTO The DTO containing information about the card holder to be created.
+     * @param httpServletRequest The HTTP servlet request object.
+     * @return The DTO representing the created card holder.
+     * @throws CardHolderException If an error occurs during card holder creation.
+     */
     @Override
     public CardHolderResponseDTO createCardHolder(CardHolderRequestDTO cardHolderRequestDTO,
                                                   HttpServletRequest httpServletRequest) {
         try {
+            // Retrieve the logger from clientInfoService using the provided HttpServletRequest
+            // Note: The retrieved logger is not used in this method.
            clientInfoService.getLogger(httpServletRequest);
             CardHolder cardHolder = cardHolderMapper.toEntity(cardHolderRequestDTO);
             cardHolderRepository.save(cardHolder);
@@ -42,24 +57,42 @@ public class CardHolderServiceImpl implements CardHolderService {
             return cardHolderMapper.toDto(cardHolder);
 
         }catch (Exception e){
-            LOG.error("Card Holder Not Created: {}", e.getMessage());
+
+            // Throw a custom exception with a meaningful message
             throw new CardHolderException("Error creating card : " + e.getMessage());
         }
     }
 
+    /**
+     * Retrieves a card holder by ID.
+     *
+     * @param id The ID of the card holder to retrieve.
+     * @param httpServletRequest The HTTP servlet request object.
+     * @return The DTO representing the retrieved card holder.
+     * @throws CardHolderException If an error occurs during card holder retrieval.
+     */
     @Override
     public CardHolderResponseDTO getCardHolder(Long id, HttpServletRequest httpServletRequest){
         try {
             clientInfoService.getLogger(httpServletRequest);
+
+            // Retrieve the card holder by ID or throw an exception if not found
             CardHolder cardHolder = cardHolderRepository.findById(id)
                     .orElseThrow(() -> new CardHolderException("Card Holder not found"));
             return cardHolderMapper.toDto(cardHolder);
         } catch (Exception e) {
-            LOG.error("Card Holder Not Found: {}", e.getMessage());
+
             throw new CardHolderException("Error getting card holder: " + e.getMessage());
         }
     }
 
+    /**
+     * Retrieves all card holders.
+     *
+     * @param request The HTTP servlet request object.
+     * @return The list of DTOs representing the retrieved card holders.
+     * @throws CardHolderException If an error occurs during card holder retrieval.
+     */
     @Override
     public List<CardHolderResponseDTO> getAllCardHolders(HttpServletRequest request) {
         try {
@@ -67,11 +100,20 @@ public class CardHolderServiceImpl implements CardHolderService {
             List<CardHolder> cardHolders = cardHolderRepository.findAll();
             return cardHolderMapper.toDto(cardHolders);
         } catch (Exception e) {
-            LOG.error("Card Holders Not Found: {}", e.getMessage());
+
             throw new CardHolderException("Error getting card holders: " + e.getMessage());
         }
     }
 
+    /**
+     * Updates a card holder.
+     *
+     * @param id The ID of the card holder to update.
+     * @param cardHolderRequestDTO The DTO containing information about the card holder to update.
+     * @param httpServletRequest The HTTP servlet request object.
+     * @return The response DTO indicating the card holder was updated.
+     * @throws CardHolderException If an error occurs during card holder update.
+     */
     @Override
     public ResponseDTO updateCardHolder(Long id, CardHolderRequestDTO cardHolderRequestDTO,
                                         HttpServletRequest httpServletRequest) {
@@ -85,11 +127,18 @@ public class CardHolderServiceImpl implements CardHolderService {
             LOG.info("Card Holder updated: {}", gson.toJson(cardHolder));
             return new ResponseDTO("Card Holder updated");
         }catch (Exception e){
-            LOG.error("Card Holder Not Updated: {}", e.getMessage());
+
             throw new CardHolderException("Error updating card holder: " + e.getMessage());
         }
     }
 
+/**
+     * Deletes a card holder.
+     *
+     * @param id The ID of the card holder to delete.
+     * @param httpServletRequest The HTTP servlet request object.
+     * @throws CardHolderException If an error occurs during card holder deletion.
+     */
     @Override
     public void deleteCardHolder(Long id, HttpServletRequest httpServletRequest) {
         try {
@@ -100,7 +149,7 @@ public class CardHolderServiceImpl implements CardHolderService {
             cardHolderRepository.delete(cardHolder);
             LOG.info("Card Holder deleted: {}", gson.toJson(cardHolder));
         } catch (Exception e) {
-            LOG.error("Card Holder Not Deleted: {}", e.getMessage());
+
             throw new CardHolderException("Error deleting card holder: " + e.getMessage());
         }
     }

@@ -19,7 +19,9 @@ import uz.atm_v_3.service.TransferMoneyService;
 import uz.atm_v_3.service.checkAndInfo.CheckCard;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
-import java.util.Date;
+/**
+ * The TransferMoneyServiceImpl class encapsulates methods for transferring money between cards.
+ */
 
 @Service
 @RequiredArgsConstructor
@@ -34,27 +36,40 @@ public class TransferMoneyServiceImpl implements TransferMoneyService {
     private final CardHistoryRepository cardHistoryRepository;
 
 
+    /**
+     * Transfers money between cards.
+     *
+     * @param transferRequestDTO The DTO containing information about the transfer.
+     * @param request            The HTTP servlet request object.
+     * @return The DTO representing the transfer.
+     * @throws CardException If an error occurs during transfer.
+     */
     @Override
     @Transactional
     public TransferResponseDTO transferMoney(TransferRequestDTO transferRequestDTO, HttpServletRequest request) {
 
-        CardHistory cardHistory = new CardHistory();
-        Card cardFrom = cardRepository.findCardByCardNumber(transferRequestDTO.getFromCardNumber());
-        Card cardTo = cardRepository.findCardByCardNumber(transferRequestDTO.getToCardNumber());
-        if (cardFrom == null || cardTo == null) {
-            throw new CardException("Card blocked or not found");
-        }
-        cardCheck.checkTransferCard(transferRequestDTO, cardFrom, cardTo);
-        double amountDouble = Double.parseDouble(transferRequestDTO.getAmount());
-        double commission = amountDouble * 0.01;
-        String balanceWithoutCommasCardFrom = cardFrom.getBalance().replaceAll(",", ".");
-        String balanceWithoutCommasCardTo = cardTo.getBalance().replaceAll(",", ".");
-        double cardBalanceFrom = Double.parseDouble(balanceWithoutCommasCardFrom);
-        double cardBalanceTo = Double.parseDouble(balanceWithoutCommasCardTo);
-        String cardBalance1;
-        String cardBalance2;
         try {
+            CardHistory cardHistory = new CardHistory();
+            Card cardFrom = cardRepository.findCardByCardNumber(transferRequestDTO.getFromCardNumber());
+            Card cardTo = cardRepository.findCardByCardNumber(transferRequestDTO.getToCardNumber());
+            // Check if the card is blocked or not found and throw an exception if it is.
+            if (cardFrom == null || cardTo == null) {
+                throw new CardException("Card blocked or not found");
+            }
+            // Check if the card is blocked or not found and throw an exception if it is.
+            cardCheck.checkTransferCard(transferRequestDTO, cardFrom, cardTo);
+            cardCheck.checkPin(transferRequestDTO.getPin(), cardFrom);
+            double amountDouble = Double.parseDouble(transferRequestDTO.getAmount());
+            double commission = amountDouble * 0.01;
+            String balanceWithoutCommasCardFrom = cardFrom.getBalance().replaceAll(",", ".");
+            String balanceWithoutCommasCardTo = cardTo.getBalance().replaceAll(",", ".");
+            double cardBalanceFrom = Double.parseDouble(balanceWithoutCommasCardFrom);
+            double cardBalanceTo = Double.parseDouble(balanceWithoutCommasCardTo);
+            String cardBalance1;
+            String cardBalance2;
+
             clientInfoService.getLogger(request);
+            // Check card type and set commission to 0 if the card type is HUMO.
             if (cardFrom.getCardType().getName().equals("HUMO") && cardTo.getCardType().getName().equals("HUMO")) {
                 commission = 0;
             }

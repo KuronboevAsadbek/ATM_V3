@@ -13,6 +13,19 @@ import org.springframework.validation.annotation.Validated;
 @AllArgsConstructor
 @Builder
 @Validated
+/**
+ * This class is responsible for creating a request to add a card holder.
+ * It contains the following fields:
+ * - name
+ * - surname
+ * - phoneNumber
+ * - email
+ * - address
+ * - passportSeries
+ * - passportNumber
+ * - pinFL
+ * - birthDate
+ */
 public class CardHolderRequestDTO {
 
     @JsonProperty("name")

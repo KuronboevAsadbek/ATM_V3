@@ -14,6 +14,5 @@ public interface GetCardService {
 
     List<CardResponseDTO> getAllCardsByCardHolderPINFL(String pinFL, HttpServletRequest request);
 
-    List<CardResponseDTO> getAllCardsByCardHolderPassportSeriesAndNumber(String passportSeries, String passportNumber,
-                                                                         HttpServletRequest request);
+
 }

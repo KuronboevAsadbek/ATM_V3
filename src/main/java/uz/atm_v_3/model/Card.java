@@ -15,6 +15,21 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Table(name = "card")
+
+/**
+ * This class is responsible for creating a table in the database that will store information about cards.
+ * The table will contain the following columns:
+ * id - the primary key of the table.
+ * cardNumber - the number of the card.
+ * cardExpireDate - the expiration date of the card.
+ * cardCVC - the CVC code of the card.
+ * cardPin - the PIN code of the card.
+ * balance - the balance of the card.
+ * isActive - the status of the card.
+ * cardHolder - the card holder.
+ * cardType - the type of the card.
+ * checkCardQuantity - the quantity of the card.
+ */
 public class Card implements Serializable {
 
     @Id

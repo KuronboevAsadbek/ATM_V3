@@ -13,15 +13,9 @@ public interface CardHistoryService {
     List<CardHistoryResponseDTO> getCardHistoryByCardNumber(CardHistoryRequestDTO cardHistoryRequestDTO,
                                                             HttpServletRequest httpServletRequest);
 
-    CardHistoryResponseDTO getCardHistoryBySenderCardNumber(CardHistoryRequestDTO cardHistoryRequestDTO,
-                                              HttpServletRequest httpServletRequest);
 
-    CardHistoryResponseDTO getCardHistoryByPeriod(CardHistoryRequestDTO cardHistoryRequestDTO,
+    List<CardHistoryResponseDTO> getCardHistoryByPeriod(CardHistoryRequestDTO cardHistoryRequestDTO,
                                                   String startDate,
                                                   String endDate,
                                               HttpServletRequest httpServletRequest);
-    CardHistoryResponseDTO getReceiverCardHistory(CardHistoryRequestDTO cardHistoryRequestDTO,
-                                              HttpServletRequest httpServletRequest);
-    CardHistoryResponseDTO getSendCardHistory(CardHistoryRequestDTO cardHistoryRequestDTO,
-                                                HttpServletRequest httpServletRequest);
 }

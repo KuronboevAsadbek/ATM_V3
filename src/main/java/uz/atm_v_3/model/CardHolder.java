@@ -16,6 +16,20 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+/**
+ * This class is responsible for creating a table in the database that will store information about card holders.
+ * The table will contain the following columns:
+ * id - the primary key of the table.
+ * name - the name of the card holder.
+ * surname - the surname of the card holder.
+ * phoneNumber - the phone number of the card holder.
+ * email - the email of the card holder.
+ * address - the address of the card holder.
+ * passportSeries - the series of the passport of the card holder.
+ * passportNumber - the number of the passport of the card holder.
+ * pinFL - the pin of the card holder.
+ * birthDate - the birth date of the card holder.
+ */
 public class CardHolder  implements Serializable{
 
     @Id

@@ -14,6 +14,15 @@ import uz.atm_v_3.model.CurrencyType;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * This class is responsible for creating a request to add a card type.
+ * It contains the following fields:
+ * - name
+ * - description
+ * - number
+ * - expirationYear
+ * - currencyType
+ */
 public class CardTypeRequestDTO {
 
     @NotEmpty

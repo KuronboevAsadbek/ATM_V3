@@ -18,6 +18,10 @@ import uz.atm_v_3.repository.CashingTypeRepository;
 import uz.atm_v_3.repository.CurrencyTypeRepository;
 import uz.atm_v_3.service.BanknoteTypeService;
 
+/**
+ * The BanknoteServiceImpl class encapsulates methods for creating, updating, and deleting banknote types.
+ */
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -28,6 +32,14 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
     private final CashingTypeRepository cashingTypeRepository;
     private final CurrencyTypeRepository currencyTypeRepository;
 
+    /**
+     * Creates a new banknote type.
+     *
+     * @param banknoteTypeRequestDTO The DTO containing information about the banknote type to be created.
+     * @param request                The HTTP servlet request object.
+     * @return The DTO representing the created banknote type.
+     * @throws CashingTypeException If the cashing type is not found.
+     */
     @Override
     public BanknoteTypeResponseDTO createBanknote(BanknoteTypeRequestDTO banknoteTypeRequestDTO, HttpServletRequest request) {
         try {
@@ -38,6 +50,7 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
             CurrencyType currencyType = currencyTypeRepository.findById(banknoteTypeRequestDTO.getCurrencyTypeId())
                     .orElseThrow(() -> new CurrencyTypeException("Currency type not found"));
 
+            // Check if the banknote type already exists in the database and update the quantity if it does exist.
             if (banknoteType1 != null) {
                 Integer quantity = banknoteType.getQuantity();
                 banknoteType1.setQuantity(banknoteType1.getQuantity() + quantity);
@@ -49,6 +62,7 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
                         .name(banknoteType1.getName())
                         .quantity(banknoteType1.getQuantity())
                         .build();
+                // If the banknote type does not exist in the database, create a new banknote type.
             } else {
                 banknoteType.setCashingType(cashingType);
                 banknoteType.setCurrencyType(currencyType);
@@ -64,13 +78,23 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
                         .build();
             }
         } catch (Exception e) {
-            log.error("Error while creating banknote type: {}", e.getMessage());
-            return null;
+            throw new CashingTypeException("Cashing type not found");
         }
     }
 
+
+    /**
+     * Retrieves a banknote type by ID.
+     *
+     * @param id      The ID of the banknote type to retrieve.
+     * @param request The HTTP servlet request object.
+     * @return The DTO representing the retrieved banknote type.
+     * @throws CashingTypeException If the banknote type is not found.
+     */
+
     @Override
     public BanknoteTypeResponseDTO updateBanknote(Long id, BanknoteTypeRequestDTO banknoteTypeRequestDTO, HttpServletRequest request) {
+
         try {
             BanknoteType banknoteType = banknoteTypeRepository.findById(id)
                     .orElseThrow(() -> new CashingTypeException("Banknote type not found"));
@@ -95,11 +119,19 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
                     .quantity(banknoteType.getQuantity())
                     .build();
         } catch (Exception e) {
-            log.error("Error while updating banknote type: {}", e.getMessage());
+
             throw new CashingTypeException("Banknote type not found");
         }
     }
 
+    /**
+     * Retrieves a banknote type by ID.
+     *
+     * @param id The ID of the banknote type to retrieve.
+     * @param request The HTTP servlet request object.
+     * @return The DTO representing the retrieved banknote type.
+     * @throws CashingTypeException If the banknote type is not found.
+     */
     @Override
     public ResponseDTO deleteBanknote(Long id, HttpServletRequest request) {
         try {
@@ -111,7 +143,7 @@ public class BanknoteServiceImpl implements BanknoteTypeService {
                     .message("Banknote type successfully deleted")
                     .build();
         } catch (Exception e) {
-            log.error("Error while deleting banknote type: {}", e.getMessage());
+
             throw new CashingTypeException("Banknote type not found: " + e.getMessage());
         }
     }

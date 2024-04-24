@@ -19,6 +19,9 @@ import uz.atm_v_3.service.CardTypeService;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
 import java.util.List;
+/**
+ * The CardTypeServiceImpl class encapsulates methods for creating, updating, and deleting card types.
+ */
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +35,14 @@ public class CardTypeServiceImpl implements CardTypeService {
     private final CardTypeMapper cardTypeMapper;
     private final CardTypeRepository cardTypeRepository;
 
+    /**
+     * Creates a new card type.
+     *
+     * @param cardTypeRequestDTO The DTO containing information about the card type to be created.
+     * @param httpServletRequest The HTTP servlet request object.
+     * @return The DTO representing the created card type.
+     * @throws CardTypeException If an error occurs during card type creation.
+     */
     @Override
     public CardTypeResponseDTO createCardType(CardTypeRequestDTO cardTypeRequestDTO, HttpServletRequest httpServletRequest) {
         try {
@@ -46,6 +57,15 @@ public class CardTypeServiceImpl implements CardTypeService {
         }
     }
 
+    /**
+     * Updates the card type information.
+     *
+     * @param cardTypeRequestDTO The DTO containing information about the card type to be updated.
+     * @param id                 The ID of the card type to be updated.
+     * @param httpServletRequest  The HTTP servlet request object.
+     * @return The DTO representing the updated card type.
+     * @throws CardTypeException If the card type is not found.
+     */
     @Override
     public CardTypeResponseDTO updateCardType(CardTypeRequestDTO cardTypeRequestDTO, Long id, HttpServletRequest httpServletRequest) {
         try {
@@ -71,11 +91,18 @@ public class CardTypeServiceImpl implements CardTypeService {
             LOG.info("Card Type deleted: {}", gson.toJson(cardType));
             return new ResponseDTO("Card Type deleted");
         } catch (Exception e) {
-            LOG.error("Card Type not deleted: {}", e.getMessage());
+
             throw new CardTypeException("Error deleting card type: " + e.getMessage());
         }
     }
 
+    /**
+     * Retrieves all card types.
+     *
+     * @param httpServletRequest The HTTP servlet request object.
+     * @return The DTO representing the retrieved card types.
+     * @throws CardTypeException If the card types are not found.
+     */
     @Override
     public List<CardTypeResponseDTO> getAllCardTypes(HttpServletRequest httpServletRequest) {
         try {
@@ -83,7 +110,7 @@ public class CardTypeServiceImpl implements CardTypeService {
             List<CardType> cardTypes = cardTypeRepository.findAll();
             return cardTypeMapper.toDto(cardTypes);
         } catch (Exception e) {
-            LOG.error("Card Types not found: {}", e.getMessage());
+
             throw new CardTypeException("Error getting card types: " + e.getMessage());
         }
     }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import uz.atm_v_3.service.impl.CardServiceImpl;
 import uz.atm_v_3.utils.ResponseCode;
 
 @ControllerAdvice
@@ -19,7 +18,9 @@ import uz.atm_v_3.utils.ResponseCode;
 @Slf4j
 public class GlobalExceptionHandler {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CardServiceImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
+
     @Getter
     @Setter
     @NoArgsConstructor
@@ -33,6 +34,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CardHolderException.class)
     @ResponseBody
     public ResponseEntity<Object> handleCardHolderException(CardHolderException cardHolderException) {
+        LOG.error(cardHolderException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -46,6 +48,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CardException.class)
     @ResponseBody
     public ResponseEntity<Object> handleCardException(CardException cardException) {
+        LOG.error(cardException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -58,6 +61,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CurrencyTypeException.class)
     @ResponseBody
     public ResponseEntity<Object> handleCurrencyTypeException(CurrencyTypeException currencyTypeException) {
+        LOG.error(currencyTypeException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -70,7 +74,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CheckPinException.class)
     @ResponseBody
     public ResponseEntity<Object> handleCheckPinException(CheckPinException checkPinException) {
-//        LOG.error("Card balance Not Filled: {}", e.getMessage());
+        LOG.error(checkPinException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -85,6 +89,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CashingTypeException.class)
     @ResponseBody
     ResponseEntity<Object> handleCashingTypeException(CashingTypeException cashingTypeException) {
+        LOG.error(cashingTypeException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -97,6 +102,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BankNoteException.class)
     @ResponseBody
     ResponseEntity<Object> handleBankNoteException(BankNoteException bankNoteException) {
+        LOG.error(bankNoteException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -109,6 +115,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CardHistoryException.class)
     @ResponseBody
     ResponseEntity<Object> handleCardHistoryException(CardHistoryException cardHistoryException) {
+        LOG.error(cardHistoryException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorResponse_2
@@ -121,6 +128,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     ResponseEntity<ErrorResponse> on(MethodArgumentNotValidException ex) {
+        LOG.error(ex.getMessage());
         ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
         ErrorResponse errorResponse = ErrorResponse.of(ResponseCode.REQUIRED_DATA_MISSING, ex.getBindingResult()
                 .getAllErrors().get(0).getDefaultMessage());

@@ -21,6 +21,17 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "card_history")
+
+/**
+ * This class is responsible for storing the history of the card.
+ * It contains the following fields:
+ * - id
+ * - amount
+ * - commission
+ * - date
+ * - fromCard
+ * - toCard
+ */
 public class CardHistory implements Serializable {
 
     @Id

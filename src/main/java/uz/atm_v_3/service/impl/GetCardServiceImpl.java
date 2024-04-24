@@ -20,6 +20,9 @@ import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The GetCardServiceImpl class encapsulates methods for getting card information.
+ */
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -28,10 +31,16 @@ public class GetCardServiceImpl implements GetCardService {
     private final Gson gson;
     private final ClientInfoService clientInfoService;
     private final CardRepository cardRepository;
-    private final CardMapper cardMapper;
     private final EntityManager entityManager;
 
-
+    /**
+     * Gets a card by its ID.
+     *
+     * @param id      The ID of the card to get.
+     * @param request The HTTP servlet request object.
+     * @return The DTO representing the card.
+     * @throws CardException If an error occurs during card retrieval.
+     */
     @Override
     public CardResponseDTO getCard(Long id, HttpServletRequest request) {
         try {
@@ -40,11 +49,18 @@ public class GetCardServiceImpl implements GetCardService {
                     .orElseThrow(() -> new CardException("Card not found"));
             return setCardFields(card);
         } catch (Exception e) {
-            LOG.error("Card Not Found: {}", e.getMessage());
+
             throw new CardException("Error getting card: " + e.getMessage());
         }
     }
 
+    /**
+     * Gets all cards.
+     *
+     * @param request The HTTP servlet request object.
+     * @return The DTO representing all cards.
+     * @throws CardException If an error occurs during card retrieval.
+     */
     @Override
     public List<CardResponseDTO> getAllCards(HttpServletRequest request) {
         try {
@@ -54,11 +70,19 @@ public class GetCardServiceImpl implements GetCardService {
             LOG.info("Cards found: {}", gson.toJson(cards));
             return cardResponseDTOS;
         } catch (Exception e) {
-            LOG.error("Cards Not Found: {}", e.getMessage());
+
             throw new CardException("Error getting cards: " + e.getMessage());
         }
     }
 
+    /**
+     * Gets all cards by the card holder's PINFL.
+     *
+     * @param pinFL   The PINFL of the card holder.
+     * @param request The HTTP servlet request object.
+     * @return The DTO representing all cards by the card holder's PINFL.
+     * @throws CardException If an error occurs during card retrieval.
+     */
     @Override
     public List<CardResponseDTO> getAllCardsByCardHolderPINFL(String pinFL, HttpServletRequest request) {
         try {
@@ -86,15 +110,10 @@ public class GetCardServiceImpl implements GetCardService {
             LOG.info("Cards found By PINFL:  {}", gson.toJson(cardResponseDTOS));
             return cardResponseDTOS;
         } catch (Exception e) {
-            LOG.error("Cards Not Found By PINFL: {}", e.getMessage());
+
             throw new CardException("Error getting cards: " + e.getMessage());
 
         }
-    }
-
-    @Override
-    public List<CardResponseDTO> getAllCardsByCardHolderPassportSeriesAndNumber(String passportSeries, String passportNumber, HttpServletRequest request) {
-        return List.of();
     }
 
     private List<CardResponseDTO> setAllCardsFields(List<Card> card){
