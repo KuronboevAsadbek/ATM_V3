@@ -8,6 +8,19 @@ import lombok.*;
 import java.time.Instant;
 import java.time.LocalDateTime;
 
+/**
+ * This class is responsible for creating a response to card history.
+ * It contains the following fields:
+ * - id
+ * - amount
+ * - commission
+ * - date
+ * - receiverCardNumber
+ * - receiverCardHolderName
+ * - senderCardNumber
+ * - senderCardHolderName
+ * - operationType
+ */
 @Getter
 @Setter
 @NoArgsConstructor

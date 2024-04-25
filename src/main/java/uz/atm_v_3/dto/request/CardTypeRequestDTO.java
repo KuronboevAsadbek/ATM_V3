@@ -10,10 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import uz.atm_v_3.model.CurrencyType;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 /**
  * This class is responsible for creating a request to add a card type.
  * It contains the following fields:
@@ -23,6 +19,11 @@ import uz.atm_v_3.model.CurrencyType;
  * - expirationYear
  * - currencyType
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class CardTypeRequestDTO {
 
     @NotEmpty

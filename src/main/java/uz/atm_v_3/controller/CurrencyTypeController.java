@@ -11,7 +11,14 @@ import uz.atm_v_3.dto.response.ResponseDTO;
 import uz.atm_v_3.service.CurrencyTypeService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to currency types.
+ * This class contains the following methods:
+ * - createCurrency
+ * - updateCurrency
+ * - deleteCurrency
+ * - getAllCurrencies
+ */
 @RestController
 @RequestMapping(CURRENCY_TYPE)
 @RequiredArgsConstructor

@@ -5,6 +5,21 @@ import jakarta.persistence.Id;
 import lombok.*;
 import uz.atm_v_3.model.CardType;
 
+/**
+ * This class is responsible for creating a response to the card.
+ * It contains the following fields:
+ * - id
+ * - cardBalance
+ * - cardNumber
+ * - cardExpireDate
+ * - cardCVC
+ * - cardPin
+ * - cardTypeName
+ * - cardStatus
+ * - cardHolderName
+ * - cardHolderAddress
+ * - cardHolderPhoneNumber
+ */
 @Getter
 @Setter
 @NoArgsConstructor

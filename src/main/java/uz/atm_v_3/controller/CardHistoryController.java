@@ -12,6 +12,11 @@ import java.util.List;
 
 import static uz.atm_v_3.utils.Endpoint.*;
 
+/**
+ * This class is a controller class. This class is responsible for handling requests related to card histories.
+ * This class contains the following methods:
+ * - getAllCardHistories
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(CARD_HISTORY)

@@ -12,6 +12,12 @@ import uz.atm_v_3.service.CardService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
 
+/**
+ * This class is a controller class. This class is responsible for handling requests related to cards.
+ * This class contains the following methods:
+ * - createCard
+ * - updateCard
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(CARD)

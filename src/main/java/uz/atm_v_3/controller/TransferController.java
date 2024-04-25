@@ -13,7 +13,11 @@ import uz.atm_v_3.service.TransferMoneyService;
 
 import static uz.atm_v_3.utils.Endpoint.CARD;
 import static uz.atm_v_3.utils.Endpoint.TRANSFER;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to transferring money.
+ * This class contains the following methods:
+ * - transferMoneyFromCardToCard
+ */
 @RestController
 @RequestMapping(TRANSFER)
 @RequiredArgsConstructor

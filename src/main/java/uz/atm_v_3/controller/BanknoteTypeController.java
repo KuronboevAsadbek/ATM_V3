@@ -11,6 +11,14 @@ import uz.atm_v_3.service.BanknoteTypeService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
 
+/**
+* This class is a controller class. This class is responsible for handling requests related to banknote types.
+* This class contains the following methods:
+* - createBanknoteType
+* - deleteBanknoteType
+* - updateBanknoteType
+*
+ */
 @RestController
 @RequestMapping(BANKNOTE_TYPE)
 @RequiredArgsConstructor

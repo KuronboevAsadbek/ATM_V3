@@ -24,6 +24,10 @@ import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 import java.time.LocalDate;
 import java.util.Random;
 
+/**
+ * The CardServiceImpl class encapsulates methods for updating and creating cards.
+ */
+
 @Service
 @RequiredArgsConstructor
 @Slf4j

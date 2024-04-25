@@ -12,7 +12,11 @@ import uz.atm_v_3.dto.response.FillOutResponseDTO;
 import uz.atm_v_3.service.FillOutCardService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to filling out cards.
+ * This class contains the following methods:
+ * - fillOutCard
+ */
 @RequiredArgsConstructor
 @RequestMapping(FILL_OUT_CARD)
 @RestController

@@ -11,7 +11,12 @@ import uz.atm_v_3.dto.response.ResponseDTO;
 import uz.atm_v_3.service.CardHolderService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to card holders.
+ * This class contains the following methods:
+ * - createCardHolder
+ * - updateCardHolder
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(CARD_HOLDER)

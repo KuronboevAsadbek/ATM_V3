@@ -3,6 +3,14 @@ package uz.atm_v_3.dto.response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
+/**
+ * This class is responsible for creating a response to cashing.
+ * It contains the following fields:
+ * - message
+ * - commission
+ * - balance
+ * - cashedAmount
+ */
 @Getter
 @Setter
 @NoArgsConstructor

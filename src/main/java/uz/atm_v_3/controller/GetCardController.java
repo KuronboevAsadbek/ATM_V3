@@ -11,7 +11,13 @@ import java.util.List;
 
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to getting cards.
+ * This class contains the following methods:
+ * - getAllCards
+ * - getAllCardsByHolderPINFL
+ * - getCardById
+ */
 @RestController
 @RequestMapping(GET)
 @RequiredArgsConstructor

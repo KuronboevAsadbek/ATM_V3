@@ -15,12 +15,13 @@ import uz.atm_v_3.model.CardHolder;
 import uz.atm_v_3.repository.CardHolderRepository;
 import uz.atm_v_3.service.CardHolderService;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
+import java.util.List;
 
 /**
  * The CardHolderServiceImpl class encapsulates methods for creating, updating, and deleting card holders.
  */
 
-import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor

@@ -5,6 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * This class is responsible for creating a response to the card type.
+ * It contains the following fields:
+ * - id
+ * - name
+ * - description
+ * - number
+ * - expirationYear
+ */
 @Getter
 @Setter
 @NoArgsConstructor

@@ -11,11 +11,6 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
 /**
  * This class is responsible for creating a table in the database that will store information about card holders.
  * The table will contain the following columns:
@@ -30,6 +25,12 @@ import java.io.Serializable;
  * pinFL - the pin of the card holder.
  * birthDate - the birth date of the card holder.
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+
 public class CardHolder  implements Serializable{
 
     @Id

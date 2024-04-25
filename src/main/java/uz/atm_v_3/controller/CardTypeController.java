@@ -9,7 +9,14 @@ import uz.atm_v_3.dto.response.CardTypeResponseDTO;
 import uz.atm_v_3.service.CardTypeService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to card types.
+ * This class contains the following methods:
+ * - createCardType
+ * - updateCardType
+ * - deleteCardType
+ * - getAllCardTypes
+ */
 @RestController
 @RequestMapping(CARD_TYPE)
 @RequiredArgsConstructor

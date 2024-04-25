@@ -12,7 +12,14 @@ import uz.atm_v_3.service.CashingTypeService;
 import java.util.List;
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to cashing types.
+ * This class contains the following methods:
+ * - createCashingType
+ * - updateCashingType
+ * - deleteCashingType
+ * - getAllCashingType
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(CASHING_TYPE)

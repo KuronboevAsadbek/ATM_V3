@@ -7,12 +7,6 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Validated
 /**
  * This class is responsible for creating a request to add a card holder.
  * It contains the following fields:
@@ -26,6 +20,13 @@ import org.springframework.validation.annotation.Validated;
  * - pinFL
  * - birthDate
  */
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Validated
 public class CardHolderRequestDTO {
 
     @JsonProperty("name")

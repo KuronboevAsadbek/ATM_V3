@@ -9,16 +9,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Validated
 /**
  * This class is responsible for creating a request to add a currency type.
  * It contains the following fields:
  * - name
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Validated
+
 public class CurrencyTypeRequestDTO {
 
 

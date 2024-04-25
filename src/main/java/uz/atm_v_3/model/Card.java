@@ -7,15 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "card")
-
 /**
  * This class is responsible for creating a table in the database that will store information about cards.
  * The table will contain the following columns:
@@ -30,6 +21,15 @@ import java.io.Serializable;
  * cardType - the type of the card.
  * checkCardQuantity - the quantity of the card.
  */
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "card")
+
+
 public class Card implements Serializable {
 
     @Id

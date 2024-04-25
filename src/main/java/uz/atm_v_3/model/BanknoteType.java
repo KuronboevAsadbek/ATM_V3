@@ -6,13 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "banknote_type")
-
 /**
  * This class is responsible for creating a table in the database that will store information about banknote types.
  * The table will contain the following columns:
@@ -23,6 +16,14 @@ import lombok.Setter;
  * cashingType - the type of cashing.
  * currencyType - the type of currency.
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "banknote_type")
+
+
 public class BanknoteType {
 
     @Id

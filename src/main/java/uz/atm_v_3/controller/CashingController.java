@@ -12,7 +12,11 @@ import uz.atm_v_3.dto.response.CashingResponseDTO;
 import uz.atm_v_3.service.CashingService;
 
 import static uz.atm_v_3.utils.Endpoint.*;
-
+/**
+ * This class is a controller class. This class is responsible for handling requests related to cashing.
+ * This class contains the following methods:
+ * - cashingMoneyWithBanknote
+ */
 @RequestMapping(CASHING)
 @RestController
 @RequiredArgsConstructor

@@ -6,10 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 /**
  * This class is responsible for creating a request to get the history of the card.
  * It contains the following fields:
@@ -17,6 +13,11 @@ import lombok.Setter;
  * - senderCardNumber
  * - pin
  */
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class CardHistoryRequestDTO {
 
 

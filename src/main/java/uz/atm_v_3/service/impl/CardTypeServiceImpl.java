@@ -81,6 +81,14 @@ public class CardTypeServiceImpl implements CardTypeService {
         }
     }
 
+    /**
+     * Deletes the card type.
+     *
+     * @param id                The ID of the card type to be deleted.
+     * @param httpServletRequest The HTTP servlet request object.
+     * @return The DTO representing the deleted card type.
+     * @throws CardTypeException If the card type is not found.
+     */
     @Override
     public ResponseDTO deleteCardType(Long id, HttpServletRequest httpServletRequest) {
         try {

@@ -13,6 +13,18 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import uz.atm_v_3.utils.ResponseCode;
 
+/**
+ * This class is responsible for handling exceptions.
+ * It contains the following methods:
+ * - handleCardHolderException
+ * - handleCardException
+ * - handleCurrencyTypeException
+ * - handleCheckPinException
+ * - handleCashingTypeException
+ * - handleBankNoteException
+ * - handleCardHistoryException
+ * - on
+ */
 @ControllerAdvice
 @RequiredArgsConstructor
 @Slf4j
@@ -29,6 +41,7 @@ public class GlobalExceptionHandler {
     public static class ErrorResponse_2 {
         private String message;
     }
+
 
 
     @ExceptionHandler(CardHolderException.class)

@@ -7,15 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
-import uz.atm_v_3.model.CardHolder;
-import uz.atm_v_3.model.CardType;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Validated
 /**
  * This class is responsible for creating a request to add a card.
  * It contains the following fields:
@@ -23,6 +15,13 @@ import uz.atm_v_3.model.CardType;
  * - cardHolderId
  * - cardTypeId
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Validated
+
 public class CardRequestDTO {
 
     @NotEmpty

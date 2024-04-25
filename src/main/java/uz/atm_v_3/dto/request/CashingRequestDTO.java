@@ -6,10 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 /**
  * This class is responsible for creating a request to cash out money.
  * It contains the following fields:
@@ -19,6 +15,10 @@ import lombok.Setter;
  * - cashingBanknoteType
  * - chequeRequest
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CashingRequestDTO {
 
     @JsonProperty("card_number")

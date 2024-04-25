@@ -1,16 +1,11 @@
 package uz.atm_v_3.dto.request;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 /**
  * This class is responsible for creating a request to fill out money.
  * It contains the following fields:
@@ -19,6 +14,11 @@ import lombok.Setter;
  * - amount
  * - chequeRequest
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class FillOutRequestDTO {
 
     @JsonProperty("card_number")

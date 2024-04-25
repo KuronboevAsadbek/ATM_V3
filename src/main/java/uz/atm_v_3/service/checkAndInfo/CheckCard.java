@@ -119,4 +119,5 @@ public class CheckCard {
             throw new CheckPinException("Card is blocked");
         }
     }
+
 }

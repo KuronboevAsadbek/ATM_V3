@@ -2,6 +2,20 @@ package uz.atm_v_3.dto.response;
 
 import lombok.*;
 
+/**
+ * This class is responsible for creating a response to the card holder.
+ * It contains the following fields:
+ * - id
+ * - name
+ * - surname
+ * - phoneNumber
+ * - email
+ * - address
+ * - passportSeries
+ * - passportNumber
+ * - pinFL
+ * - birthDate
+ */
 @Getter
 @Setter
 @NoArgsConstructor
