@@ -22,8 +22,8 @@
 | 3  |      [__Card Service__](https://github.com/KuronboevAsadbek/ATM_V3?tab=readme-ov-file#create-card)      |   ✅    |
 | 4  |    [__Cashing Service__](https://github.com/KuronboevAsadbek/ATM_V3?tab=readme-ov-file#cashing-service)     |   ✅    |
 | 5  | [__Fill Out  Card Service__](#fill-out-card-service) |   ✅    |
-| 6  |    __Transfer Service__    |   ✅    |
-| 7  |    __Get Card Service__    |   ✅    |
+| 6  |    [__Transfer Service__ ](#transfer-service)   |   ✅    |
+| 7  |    [__Get Card Service__](#get-card-service)    |   ✅    |
 
 ##API REFERENCE
 
