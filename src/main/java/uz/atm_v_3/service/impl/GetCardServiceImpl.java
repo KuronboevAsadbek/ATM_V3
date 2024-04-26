@@ -11,9 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import uz.atm_v_3.dto.response.CardResponseDTO;
 import uz.atm_v_3.exception.CardException;
+import uz.atm_v_3.exception.CardTypeException;
 import uz.atm_v_3.mapping.CardMapper;
 import uz.atm_v_3.model.Card;
+import uz.atm_v_3.model.CardType;
 import uz.atm_v_3.repository.CardRepository;
+import uz.atm_v_3.repository.CardTypeRepository;
 import uz.atm_v_3.service.GetCardService;
 import uz.atm_v_3.service.checkAndInfo.ClientInfoService;
 
@@ -44,9 +47,11 @@ public class GetCardServiceImpl implements GetCardService {
     @Override
     public CardResponseDTO getCard(Long id, HttpServletRequest request) {
         try {
+
             clientInfoService.getLogger(request);
             Card card = cardRepository.findById(id)
                     .orElseThrow(() -> new CardException("Card not found"));
+
             return setCardFields(card);
         } catch (Exception e) {
 
@@ -132,7 +137,7 @@ public class GetCardServiceImpl implements GetCardService {
             cardResponseDTO.setCardPin(card.get(i).getCardPin());
             cardResponseDTO.setCardStatus(card.get(i).getIsActive());
             cardResponseDTO.setCardExpireDate(card.get(i).getCardExpireDate());
-            cardResponseDTO.setCardTypeName(String.valueOf((card.get(i).getCardType())));
+            cardResponseDTO.setCardTypeName((card.get(i).getCardType().getName()));
             cardResponseDTOS.add(cardResponseDTO);
         }
         return cardResponseDTOS;
@@ -152,7 +157,7 @@ public class GetCardServiceImpl implements GetCardService {
         cardResponseDTO.setCardPin(card.getCardPin());
         cardResponseDTO.setCardStatus(card.getIsActive());
         cardResponseDTO.setCardExpireDate(card.getCardExpireDate());
-        cardResponseDTO.setCardTypeName(String.valueOf(card.getCardType()));
+        cardResponseDTO.setCardTypeName(card.getCardType().getName());
         return cardResponseDTO;
     }
 }

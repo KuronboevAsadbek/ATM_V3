@@ -24,7 +24,7 @@ public class FillOutCardController {
 
     private final FillOutCardService fillOutCardService;
 
-    @PostMapping(UZS)
+    @PostMapping(OUT)
     public ResponseEntity<FillOutResponseDTO> fillOutCard(@RequestBody FillOutRequestDTO fillOutRequestDTO,
                                                           HttpServletRequest request) {
         return ResponseEntity.ok(fillOutCardService.fillOutCardBalance(fillOutRequestDTO, request));

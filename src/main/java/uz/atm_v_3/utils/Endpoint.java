@@ -10,8 +10,10 @@ public class Endpoint {
     public static final String CARD = "/card";
     public static final String CREATE = "/create";
     public static final String UPDATE = "/update";
+    public static final String STATUS = "/status";
     public static final String USD = "/usd";
-    public static final String UZS = "/uzs";
+    public static final String IN = "/in";
+    public static final String OUT = "/out";
     public static final String UZS2 = "/uzs2";
     public static final String DELETE = "/delete";
     public static final String GET_CARD_BY_ID = "/{id}";

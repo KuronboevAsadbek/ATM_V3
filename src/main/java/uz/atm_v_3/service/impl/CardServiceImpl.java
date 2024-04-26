@@ -8,8 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import uz.atm_v_3.dto.request.CardRequestDTO;
+import uz.atm_v_3.dto.request.StatusRequestDTO;
 import uz.atm_v_3.dto.response.CardResponseDTO;
 import uz.atm_v_3.dto.response.ResponseDTO;
+import uz.atm_v_3.dto.response.StatusResponseDTO;
 import uz.atm_v_3.exception.CardException;
 import uz.atm_v_3.mapping.CardMapper;
 import uz.atm_v_3.model.Card;
@@ -25,7 +27,7 @@ import java.time.LocalDate;
 import java.util.Random;
 
 /**
- * The CardServiceImpl class encapsulates methods for updating and creating cards.
+ * The CardServiceImpl class encapsulates methods for creating, updating, and blocking cards.
  */
 
 @Service
@@ -122,5 +124,35 @@ public class CardServiceImpl implements CardService {
         }
     }
 
+    @Override
+    public StatusResponseDTO blockCard(StatusRequestDTO statusRequestDTO, HttpServletRequest request) {
+        try {
+            clientInfoService.getLogger(request);
+            Card card = cardRepository.findById(statusRequestDTO.getId())
+                    .orElseThrow(() -> new CardException("Card not found"));
+            if (statusRequestDTO.getStatus().equals("BLOCK")){
+                card.setIsActive(Boolean.FALSE);
 
+            }else if (statusRequestDTO.getStatus().equals("UNBLOCK")){
+                card.setIsActive(Boolean.TRUE);
+            }else {
+                throw new CardException("Status not found");
+            }
+            cardRepository.save(card);
+            LOG.info("Card blocked: {}", gson.toJson(card));
+            if (card.getIsActive()){
+                return StatusResponseDTO.builder()
+                        .message("Card unblocked")
+                        .status("ACTIVE")
+                        .build();
+            }else {
+                return StatusResponseDTO.builder()
+                        .message("Card blocked")
+                        .status("BLOCKED")
+                        .build();
+            }
+        } catch (Exception e) {
+            throw new CardException("Error blocking card: " + e.getMessage());
+        }
+    }
 }

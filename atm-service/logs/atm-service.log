@@ -1,43 +1,370 @@
-2024-04-25 08:36:06 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h58m16s399ms819µs).
-2024-04-25 08:42:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-25 08:42:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2024-04-25 08:42:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2024-04-25 15:54:43 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-04-25 15:54:43 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 21844 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
-2024-04-25 15:54:43 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
-2024-04-25 15:54:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-25 15:54:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112 ms. Found 7 JPA repository interfaces.
-2024-04-25 15:54:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-04-25 15:54:45 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-04-25 15:54:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
-2024-04-25 15:54:45 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
-2024-04-25 15:54:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-04-25 15:54:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-04-25 15:54:45 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
-2024-04-25 15:54:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1710 ms
-2024-04-25 15:54:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-25 15:54:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-04-25 15:54:45 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2024-04-25 15:54:46 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-25 15:54:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2024-04-25 15:54:46 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34cf0e80
-2024-04-25 15:54:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2024-04-25 15:54:47 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-25 15:54:47 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-25 15:54:47 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-04-25 15:54:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-25 15:54:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
-2024-04-25 15:54:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
-2024-04-25 15:54:48 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 4.967 seconds (process running for 5.872)
-2024-04-25 15:55:43 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-25 15:55:43 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-04-25 15:55:43 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
-2024-04-25 15:55:43 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
-2024-04-25 15:55:43 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.139
-2024-04-25 15:57:31 [http-nio-8585-exec-6] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
-2024-04-25 15:57:31 [http-nio-8585-exec-6] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.139
-2024-04-25 15:57:58 [http-nio-8585-exec-7] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
-2024-04-25 15:57:58 [http-nio-8585-exec-7] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.139
-2024-04-25 17:41:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-25 17:41:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2024-04-25 17:41:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 17:28:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 17:28:26 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 15944 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 17:28:26 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 17:28:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 17:28:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 7 JPA repository interfaces.
+2024-04-26 17:28:28 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 17:28:28 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 17:28:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 17:28:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:28:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 17:28:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 17:28:28 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 17:28:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1442 ms
+2024-04-26 17:28:28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 17:28:28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 17:28:28 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 17:28:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 17:28:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 17:28:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70485aa
+2024-04-26 17:28:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 17:28:30 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 17:28:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:28:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 17:28:30 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 17:28:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:28:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 17:28:31 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 4.519 seconds (process running for 5.585)
+2024-04-26 17:28:36 [http-nio-8585-exec-4] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 17:28:36 [http-nio-8585-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 17:28:36 [http-nio-8585-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-04-26 17:28:36 [http-nio-8585-exec-4] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:28:36 [http-nio-8585-exec-4] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:28:36 [http-nio-8585-exec-4] INFO  u.a.service.impl.CardServiceImpl - Card created: {"id":7,"cardBalance":"0","cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","cardTypeName":"HUMO","cardStatus":true,"cardHolderName":"Asadbek Quronboyev","cardHolderAddress":"Tashkent","cardHolderPhoneNumber":"+998999666374"}
+2024-04-26 17:50:48 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:50:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 17:50:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 17:50:53 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 17:50:53 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 12224 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 17:50:53 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 17:50:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 17:50:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 7 JPA repository interfaces.
+2024-04-26 17:50:54 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 17:50:54 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 17:50:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 17:50:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:50:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 17:50:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 17:50:54 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 17:50:54 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1136 ms
+2024-04-26 17:50:54 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 17:50:54 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 17:50:54 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 17:50:55 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 17:50:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 17:50:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11ad095c
+2024-04-26 17:50:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 17:50:56 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 17:50:56 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:50:56 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 17:50:56 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 17:50:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:50:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 17:50:56 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.818 seconds (process running for 4.448)
+2024-04-26 17:51:01 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 17:51:01 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 17:51:01 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-04-26 17:51:01 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:51:01 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:51:01 [http-nio-8585-exec-2] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:51:06 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:51:06 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:51:06 [http-nio-8585-exec-3] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:51:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:51:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 17:51:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 17:51:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 17:51:28 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 10996 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 17:51:28 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 17:51:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 17:51:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 7 JPA repository interfaces.
+2024-04-26 17:51:29 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 17:51:29 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 17:51:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 17:51:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:51:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 17:51:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 17:51:29 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 17:51:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1160 ms
+2024-04-26 17:51:30 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 17:51:30 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 17:51:30 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 17:51:30 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 17:51:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 17:51:30 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4aab7195
+2024-04-26 17:51:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 17:51:31 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 17:51:31 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:51:31 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 17:51:32 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 17:51:32 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:51:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 17:51:32 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 4.037 seconds (process running for 4.695)
+2024-04-26 17:51:38 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 17:51:38 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 17:51:38 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-04-26 17:51:38 [http-nio-8585-exec-1] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:51:38 [http-nio-8585-exec-1] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:51:38 [http-nio-8585-exec-1] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":false,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:51:42 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:51:42 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:51:42 [http-nio-8585-exec-3] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:51:52 [http-nio-8585-exec-4] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:51:52 [http-nio-8585-exec-4] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:51:52 [http-nio-8585-exec-4] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":false,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:51:55 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:51:55 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:51:55 [http-nio-8585-exec-5] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:52:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:52:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 17:52:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 17:52:15 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 17:52:15 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 23956 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 17:52:15 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 17:52:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 17:52:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 7 JPA repository interfaces.
+2024-04-26 17:52:16 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 17:52:16 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 17:52:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 17:52:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:52:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 17:52:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 17:52:17 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 17:52:17 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1090 ms
+2024-04-26 17:52:17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 17:52:17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 17:52:17 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 17:52:17 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 17:52:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 17:52:17 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@9dc782d
+2024-04-26 17:52:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 17:52:18 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 17:52:18 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:52:18 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 17:52:19 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 17:52:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:52:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 17:52:19 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.774 seconds (process running for 4.431)
+2024-04-26 17:52:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:52:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 17:52:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 17:52:25 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 17:52:25 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 22688 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 17:52:25 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 17:52:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 17:52:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 7 JPA repository interfaces.
+2024-04-26 17:52:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 17:52:25 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 17:52:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 17:52:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:52:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 17:52:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 17:52:26 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 17:52:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1096 ms
+2024-04-26 17:52:26 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 17:52:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 17:52:26 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 17:52:26 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 17:52:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 17:52:26 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29f3185c
+2024-04-26 17:52:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 17:52:27 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 17:52:27 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 17:52:28 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 17:52:28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 17:52:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 17:52:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 17:52:28 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.664 seconds (process running for 4.328)
+2024-04-26 17:52:55 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 17:52:55 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 17:52:55 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-04-26 17:52:56 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:52:56 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:52:56 [http-nio-8585-exec-2] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":false,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:52:59 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:52:59 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:52:59 [http-nio-8585-exec-5] INFO  u.a.service.impl.CardServiceImpl - Card blocked: {"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 17:53:02 [http-nio-8585-exec-4] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 17:53:02 [http-nio-8585-exec-4] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 17:53:02 [http-nio-8585-exec-4] ERROR u.a.exception.GlobalExceptionHandler - Error blocking card: Status not found
+2024-04-26 18:05:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:05:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 18:05:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 18:05:21 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 18:05:21 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 4912 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 18:05:21 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 18:05:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 18:05:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 7 JPA repository interfaces.
+2024-04-26 18:05:22 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 18:05:22 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 18:05:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 18:05:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:05:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 18:05:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 18:05:22 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 18:05:22 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1172 ms
+2024-04-26 18:05:22 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 18:05:22 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 18:05:22 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 18:05:23 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 18:05:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 18:05:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@399f5daf
+2024-04-26 18:05:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 18:05:24 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 18:05:24 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:05:24 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 18:05:24 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 18:05:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:05:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 18:05:25 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.81 seconds (process running for 4.45)
+2024-04-26 18:05:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:05:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 18:05:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 18:05:38 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 18:05:38 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 21300 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 18:05:38 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 18:05:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 18:05:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+2024-04-26 18:05:39 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 18:05:39 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 18:05:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 18:05:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:05:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 18:05:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 18:05:39 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 18:05:39 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1232 ms
+2024-04-26 18:05:39 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 18:05:39 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 18:05:39 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 18:05:40 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 18:05:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 18:05:40 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29f3185c
+2024-04-26 18:05:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 18:05:41 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 18:05:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:05:41 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 18:05:41 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 18:05:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:05:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 18:05:41 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.93 seconds (process running for 4.629)
+2024-04-26 18:05:45 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 18:05:45 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 18:05:45 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-04-26 18:05:46 [http-nio-8585-exec-1] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:05:46 [http-nio-8585-exec-1] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:05:53 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:05:53 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:11:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:11:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 18:11:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 18:11:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 18:11:59 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 12952 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 18:11:59 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 18:12:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 18:12:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 7 JPA repository interfaces.
+2024-04-26 18:12:00 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 18:12:00 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 18:12:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 18:12:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:12:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 18:12:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 18:12:01 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 18:12:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1165 ms
+2024-04-26 18:12:01 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 18:12:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 18:12:01 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 18:12:01 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 18:12:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 18:12:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c830ebd
+2024-04-26 18:12:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 18:12:02 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 18:12:02 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:12:02 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 18:12:03 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 18:12:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:12:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 18:12:03 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.869 seconds (process running for 4.526)
+2024-04-26 18:12:09 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 18:12:09 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 18:12:09 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-04-26 18:12:10 [http-nio-8585-exec-1] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:12:10 [http-nio-8585-exec-1] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:12:10 [http-nio-8585-exec-1] INFO  u.a.service.impl.CardServiceImpl - Card balance filled: {"id":1,"cardNumber":"9860160116553910","cardExpireDate":"2029-04-19","cardPin":"2222","balance":"9982342850,00","isActive":true,"cardHolder":{"id":1,"name":"Jahongir","surname":"Sherjonov","phoneNumber":"+998907888822","email":"jahongir@gmail.com","address":"Tashkent","passportSeries":"AD","passportNumber":"7070707","pinFL":"12312312312312","birthDate":"18.06.1998"},"cardType":{"id":5,"name":"UZCARD","description":"type is uzcard","number":"86001601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}
+2024-04-26 18:16:03 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:16:03 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:17:08 [http-nio-8585-exec-8] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:17:08 [http-nio-8585-exec-8] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:17:08 [http-nio-8585-exec-8] INFO  u.a.service.impl.CardServiceImpl - Cards found: [{"id":3,"cardNumber":"8600160143984515","cardExpireDate":"2029-04-19","cardPin":"2222","balance":"0","isActive":true,"cardHolder":{"id":1,"name":"Jahongir","surname":"Sherjonov","phoneNumber":"+998907888822","email":"jahongir@gmail.com","address":"Tashkent","passportSeries":"AD","passportNumber":"7070707","pinFL":"12312312312312","birthDate":"18.06.1998"},"cardType":{"id":5,"name":"UZCARD","description":"type is uzcard","number":"86001601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0},{"id":2,"cardNumber":"8600160167921835","cardExpireDate":"2029-04-19","cardPin":"2222","balance":"2500000,00","isActive":true,"cardHolder":{"id":1,"name":"Jahongir","surname":"Sherjonov","phoneNumber":"+998907888822","email":"jahongir@gmail.com","address":"Tashkent","passportSeries":"AD","passportNumber":"7070707","pinFL":"12312312312312","birthDate":"18.06.1998"},"cardType":{"id":5,"name":"UZCARD","description":"type is uzcard","number":"86001601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0},{"id":5,"cardNumber":"6262151550185769","cardExpireDate":"2027-04-23","cardCVC":"453","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":6,"name":"VISA","description":"this is visa card","number":"62621515","expirationYear":3,"currencyType":{"id":2,"name":"USD"}},"checkCardQuantity":0},{"id":6,"cardNumber":"9860160145764843","cardExpireDate":"2029-04-23","cardPin":"1111","balance":"484850,00","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0},{"id":4,"cardNumber":"6262151588659984","cardExpireDate":"2027-04-22","cardCVC":"457","cardPin":"2222","balance":"9076,11","isActive":true,"cardHolder":{"id":1,"name":"Jahongir","surname":"Sherjonov","phoneNumber":"+998907888822","email":"jahongir@gmail.com","address":"Tashkent","passportSeries":"AD","passportNumber":"7070707","pinFL":"12312312312312","birthDate":"18.06.1998"},"cardType":{"id":6,"name":"VISA","description":"this is visa card","number":"62621515","expirationYear":3,"currencyType":{"id":2,"name":"USD"}},"checkCardQuantity":0},{"id":7,"cardNumber":"9860160191819353","cardExpireDate":"2029-04-26","cardPin":"1111","balance":"0","isActive":true,"cardHolder":{"id":2,"name":"Asadbek","surname":"Quronboyev","phoneNumber":"+998999666374","email":"asadbek@gmail.com","address":"Tashkent","passportSeries":"AB","passportNumber":"0695312","pinFL":"11112222333344","birthDate":"03.05.1998"},"cardType":{"id":1,"name":"HUMO","description":"type is uzcard","number":"98601601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0},{"id":1,"cardNumber":"9860160116553910","cardExpireDate":"2029-04-19","cardPin":"2222","balance":"9982342850,00","isActive":true,"cardHolder":{"id":1,"name":"Jahongir","surname":"Sherjonov","phoneNumber":"+998907888822","email":"jahongir@gmail.com","address":"Tashkent","passportSeries":"AD","passportNumber":"7070707","pinFL":"12312312312312","birthDate":"18.06.1998"},"cardType":{"id":5,"name":"UZCARD","description":"type is uzcard","number":"86001601","expirationYear":5,"currencyType":{"id":1,"name":"UZS"}},"checkCardQuantity":0}]
+2024-04-26 18:19:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:19:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 18:19:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 18:20:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 18:20:02 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 27476 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 18:20:02 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 18:20:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 18:20:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 7 JPA repository interfaces.
+2024-04-26 18:20:03 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 18:20:03 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 18:20:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 18:20:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:20:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 18:20:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 18:20:03 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 18:20:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1143 ms
+2024-04-26 18:20:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 18:20:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 18:20:03 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 18:20:04 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 18:20:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 18:20:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6181bc4a
+2024-04-26 18:20:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 18:20:05 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 18:20:05 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:20:05 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 18:20:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 18:20:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:20:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 18:20:06 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.856 seconds (process running for 4.539)
+2024-04-26 18:20:08 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 18:20:08 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 18:20:08 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-04-26 18:20:08 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:20:08 [http-nio-8585-exec-2] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:21:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:21:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-26 18:21:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-26 18:21:20 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-26 18:21:20 [main] INFO  uz.atm_v_3.AtmV3Application - Starting AtmV3Application using Java 17.0.10 with PID 18636 (C:\Users\asadb\Desktop\fast-food\ATM_V_3\target\classes started by asadb in C:\Users\asadb\Desktop\fast-food\ATM_V_3)
+2024-04-26 18:21:20 [main] INFO  uz.atm_v_3.AtmV3Application - No active profile set, falling back to 1 default profile: "default"
+2024-04-26 18:21:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-26 18:21:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+2024-04-26 18:21:21 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-04-26 18:21:21 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-26 18:21:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-04-26 18:21:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:21:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-26 18:21:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-26 18:21:21 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2024-04-26 18:21:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1075 ms
+2024-04-26 18:21:21 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-26 18:21:21 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-26 18:21:21 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-26 18:21:21 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-26 18:21:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-26 18:21:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2211b44f
+2024-04-26 18:21:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-26 18:21:22 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-26 18:21:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-26 18:21:23 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-26 18:21:23 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-26 18:21:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-04-26 18:21:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/api'
+2024-04-26 18:21:23 [main] INFO  uz.atm_v_3.AtmV3Application - Started AtmV3Application in 3.685 seconds (process running for 4.348)
+2024-04-26 18:21:29 [http-nio-8585-exec-3] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-26 18:21:29 [http-nio-8585-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-26 18:21:29 [http-nio-8585-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-04-26 18:21:29 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:21:29 [http-nio-8585-exec-3] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:23:01 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - localhost
+2024-04-26 18:23:01 [http-nio-8585-exec-5] INFO  u.a.s.checkAndInfo.ClientInfoService - 192.168.68.143
+2024-04-26 18:23:01 [http-nio-8585-exec-5] INFO  u.a.service.impl.CardServiceImpl - Cards found By PINFL:  [{"id":3,"cardBalance":"0","cardNumber":"8600160143984515","cardExpireDate":"2029-04-19","cardPin":"2222","cardTypeName":"UZCARD","cardStatus":true,"cardHolderName":"Jahongir","cardHolderAddress":"Tashkent","cardHolderPhoneNumber":"+998907888822"},{"id":2,"cardBalance":"2500000,00","cardNumber":"8600160167921835","cardExpireDate":"2029-04-19","cardPin":"2222","cardTypeName":"UZCARD","cardStatus":true,"cardHolderName":"Jahongir","cardHolderAddress":"Tashkent","cardHolderPhoneNumber":"+998907888822"},{"id":4,"cardBalance":"9076,11","cardNumber":"6262151588659984","cardExpireDate":"2027-04-22","cardCVC":"457","cardPin":"2222","cardTypeName":"VISA","cardStatus":true,"cardHolderName":"Jahongir","cardHolderAddress":"Tashkent","cardHolderPhoneNumber":"+998907888822"},{"id":1,"cardBalance":"9982342850,00","cardNumber":"9860160116553910","cardExpireDate":"2029-04-19","cardPin":"2222","cardTypeName":"UZCARD","cardStatus":true,"cardHolderName":"Jahongir","cardHolderAddress":"Tashkent","cardHolderPhoneNumber":"+998907888822"}]
