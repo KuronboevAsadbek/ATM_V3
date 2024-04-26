@@ -17,7 +17,7 @@
 
 | No |          Services          | Status |
 |:--:|:--------------------------:|:------:|
-| 1  |  __Card Holder Service__(https://github.com/KuronboevAsadbek/ATM_V3?tab=readme-ov-file#description)   |   ✅    |
+| 1  |  __Card Holder Service__   |   ✅    |
 | 2  | __BankNote Type Service__  |   ✅    |
 | 3  |      __Card Service__      |   ✅    |
 | 4  |    __Cashing Service__     |   ✅    |
